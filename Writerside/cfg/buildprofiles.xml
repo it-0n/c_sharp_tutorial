@@ -5,7 +5,7 @@
     <variables></variables>
     <build-profile instance="hi">
         <variables>
-            <custom-favicons>icon16.png,icon32.png,icon96.png,icon300.png,icon500.png</custom-favicons>
+            <custom-favicons>favicon.png</custom-favicons>
             <noindex-content>false</noindex-content>
             <primary-color>emerald</primary-color>
         </variables>
