@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <variables></variables>
+    <build-profile instance="hi">
+        <variables>
+            <custom-favicons>icon16.png,icon32.png,icon96.png,icon300.png,icon500.png</custom-favicons>
+            <noindex-content>false</noindex-content>
+            <primary-color>emerald</primary-color>
+        </variables>
+    </build-profile>
+
+</buildprofiles>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="Полный учебный курс по C# и .NET (уроки и практические задачи)"
+                 start-page="Overview-of-CSharp-and-DotNet.md">
+
+    <toc-element topic="Overview-of-CSharp-and-DotNet.md"/>
+    <toc-element topic="Default-topic.md"/>
+</instance-profile>
