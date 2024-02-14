@@ -5,6 +5,7 @@
     <variables></variables>
     <build-profile instance="hi">
         <variables>
+            <custom-favicons>https://github.com/it-0n/c_sharp_tutorial/blob/main/Writerside/images/favicon.png?raw=true</custom-favicons>
             <noindex-content>false</noindex-content>
             <primary-color>emerald</primary-color>
         </variables>
