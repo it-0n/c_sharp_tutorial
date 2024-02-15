@@ -4,8 +4,9 @@
 
 <instance-profile id="hi"
                  name="Полный учебный курс по C# и .NET (уроки и практические задачи)"
-                 start-page="Overview-of-CSharp-and-DotNet.md">
+                 start-page="introduction.md">
 
+    <toc-element topic="introduction.md"/>
     <toc-element topic="Overview-of-CSharp-and-DotNet.md"/>
     <toc-element topic="Default-topic.md"/>
 </instance-profile>
