@@ -7,6 +7,7 @@
         <variables>
             <noindex-content>false</noindex-content>
             <primary-color>emerald</primary-color>
+            <header-logo>LogoITon-12.svg</header-logo>
         </variables>
     </build-profile>
 
