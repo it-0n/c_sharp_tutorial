@@ -153,7 +153,7 @@ C# - это язык программирования для платформы 
 
 Кроме того существует несколько версий .NET и по этой [ссылке](https://dotnet.microsoft.com/en-us/download/dotnet) можно увидеть их все.
 
-![Пример страницы загрузки всех версий .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample01.png){ border-effect="line" thumbnail="true" width="621"}
+![Пример страницы загрузки всех версий .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample02.png){ border-effect="line" thumbnail="true" width="621"}
 
 ## Чем .NET SDK отличается от .NET Runtime? {id="10"}
 
