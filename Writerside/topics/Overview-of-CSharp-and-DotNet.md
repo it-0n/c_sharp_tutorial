@@ -155,6 +155,15 @@ C# - это язык программирования для платформы 
 
 ![Пример страницы загрузки всех версий .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample02.png){ border-effect="line" thumbnail="true" width="621"}
 
+Как вы можете видеть на скриншоте выше у разных версий .NET разный срок поддержки. Существуют так называемые версии LTS (Long Term Support)
+или версии с долгосрочной поддержкой, которые поддерживаются 3 года. И есть промежуточные версии STS (Standard Term Support), которые поддерживаются полтора года.
+
+На скриншоте ниже более наглядно видно время поддержки LTS и STS версий .NET.
+
+![Время поддержки LTS и STS версий .NET](dotnetSDKandRuntimeExample03.png){ border-effect="line" thumbnail="true" width="621"}
+
+Полее подробно можно почитать [тут](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)
+
 ## Чем .NET SDK отличается от .NET Runtime? {id="10"}
 
 По идее это уже вам должно быть понятно из предыдущих двух ответов. Если кратко, то .NET SDK нужен для разработки программ,
