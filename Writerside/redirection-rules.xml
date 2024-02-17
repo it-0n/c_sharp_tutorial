@@ -10,4 +10,10 @@
         <description>Created after removal of "Обзор C# и .NET" from C# Tutorial</description>
         <accepts>Обзор-C-и-NET.html</accepts>
     </rule>
+    <rule id="51004239">
+        <description>Created after removal of "Эпизод 1. Основы язка C#" from Полный учебный курс по C# и .NET (уроки и
+            практические задачи)
+        </description>
+        <accepts>Эпизод-1-Основы-язка-C.html</accepts>
+    </rule>
 </rules>
