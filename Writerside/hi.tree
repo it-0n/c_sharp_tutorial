@@ -9,7 +9,9 @@
     <toc-element topic="introduction.md"/>
     <toc-element topic="Overview-of-CSharp-and-DotNet.md"/>
     <toc-element topic="Basics_of_C_Sharp.md">
-        <toc-element topic="how_to_install_dotnet_sdk_and_write_first_code.md"/>
+        <toc-element topic="how_to_install_dotnet_sdk_and_write_first_code.md">
+            <toc-element topic="Install-NET-SDK-8-in-Windows.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Default-topic.md"/>
 </instance-profile>
