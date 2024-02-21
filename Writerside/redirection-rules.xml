@@ -16,4 +16,10 @@
         </description>
         <accepts>Эпизод-1-Основы-язка-C.html</accepts>
     </rule>
+    <rule id="672f1856">
+        <description>Created after removal of "This is the first topic" from Полный учебный курс по C# и .NET (уроки и
+            практические задачи)
+        </description>
+        <accepts>Default-topic.html</accepts>
+    </rule>
 </rules>
