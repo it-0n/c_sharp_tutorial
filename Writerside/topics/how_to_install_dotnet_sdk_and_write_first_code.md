@@ -3,7 +3,7 @@
 Эти статьи можно не читать если вы знаете ответы на эти вопросы:
 
 - [Как установить .NET SDK в Windows](Install-NET-SDK-8-in-Windows.md)
-- Как установить .NET SDK в WSL (Windows Subsystem for Linux)
+- [Как установить .NET SDK в WSL (Windows Subsystem for Linux)](Install-NET-SDK-8-in-WSL.md)
 - Как установить .NET SDK в Linux
 - Как установить .NET SDK в macOS
 - [Как в командной строке создать проект C#](how-to-crate-csharp-windows-command-line.md)
