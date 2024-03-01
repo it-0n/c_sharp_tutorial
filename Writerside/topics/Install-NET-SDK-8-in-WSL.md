@@ -256,17 +256,17 @@
 
 Так же получить доступ к файлам WSL вы можете через адресную строку Проводника Windows введя там путь:
 
-`\\wsl$`
+`\\\wsl$`
 
 ![Просмотр файловой системы WSL](wsl_files05.png){border-effect="line" thumbnail="true" width="621"}
 
 На скриншоте видно, что этот способ идентичен, описанному выше. Его можно использовать для прямого доступа к файлам WSL
 из Windows. Например, нажмите `Win+r` и введите следующий путь и нажмите ОК:
 
-`\\wsl$\Ubuntu\home\itpro\test.txt`
+`\\\wsl$\Ubuntu\home\itpro\test.txt`
 
 >Внимане! В пути вы должны задать после папки **home** имя пользователя которого вы создали во время установки Ubuntu.
-{style="note"}
+{style="warning"}
 
 ![Прямой доступ к файлу test.txt по UNC пути из Windows в WSL](wsl_files06.png){border-effect="line"}
 
