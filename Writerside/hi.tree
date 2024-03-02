@@ -13,6 +13,7 @@
             <toc-element topic="Install-NET-SDK-8-in-Windows.md"/>
             <toc-element topic="how-to-crate-csharp-windows-command-line.md"/>
             <toc-element topic="Install-NET-SDK-8-in-WSL.md"/>
+            <toc-element topic="How-to-create-csharp-project-Ubuntu.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
