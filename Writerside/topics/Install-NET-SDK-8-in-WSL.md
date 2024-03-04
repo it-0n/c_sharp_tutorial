@@ -138,7 +138,7 @@
 
 ![WSL обновление Ubuntu](wsl_ubuntu09.png){border-effect="line"}
 
-## Установка .NET SDK в WSL Ubuntu
+## Установка .NET SDK в WSL Ubuntu {id="Install_DotNetSKD_WSL_Ubuntu"}
 [Установка .NET SDK в Linux и в частности в Ubuntu возможна несколькими способами](https://learn.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu).
 Мы воспользуемся самым простым.
 
