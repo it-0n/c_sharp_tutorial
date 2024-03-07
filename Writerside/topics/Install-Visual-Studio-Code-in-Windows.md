@@ -239,6 +239,8 @@ solution. Посмотрите содержимое этого файла.
 ![Запуск проекта](VSCode_Solution24.png){border-effect="line" thumbnail="true" width="621"}
 
 Как видите у класса [с операторами верхнего уровня](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/program-structure/top-level-statements) нет пространства имен, вернее оно глобальное.
+Сравните это с выводом приложения из предыдущего проекта. Там имя пространства имен выводилось для класса без операторов
+верхнего уровня.
 
 Для таких классов есть несколько ограничений и особенностей:
 - [Только один файл в проекте может содержать операторы верхнего уровня](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/program-structure/top-level-statements#only-one-top-level-file)
