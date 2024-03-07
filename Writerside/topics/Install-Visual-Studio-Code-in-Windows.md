@@ -276,7 +276,7 @@ solution. Посмотрите содержимое этого файла.
 
 ![Запуск проекта в терминале WSL из VSCode](VSCode_Solution27.png){border-effect="line" thumbnail="true" width="621"}
 
-Закройте папку и затем закройте удаленной подключение.
+Закройте папку и затем закройте удаленное подключение.
 
 ![Закрытие папки проекта ](VSCode_Solution28.png){border-effect="line" thumbnail="true" width="621"}
 
