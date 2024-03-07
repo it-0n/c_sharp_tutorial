@@ -233,3 +233,17 @@ solution. Посмотрите содержимое этого файла.
 После этого будет создан проект. И вы сможете его увидеть как в **Обозревателе решений**, так и в **Проводнике** VSCode.
 
 ![Созданный проект](VSCode_Solution23.png){border-effect="line" thumbnail="true" width="621"}
+
+Откройте файл Program.cs в проекте `ex0006VSCodeProject03`, приведите к следующему виду и запустите во встроенном терминале.
+
+![Запуск проекта](VSCode_Solution24.png){border-effect="line" thumbnail="true" width="621"}
+
+Как видите у класса [с операторами верхнего уровня](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/program-structure/top-level-statements) нет пространства имен, вернее оно глобальное.
+
+Для таких классов есть несколько ограничений и особенностей:
+- [Только один файл в проекте может содержать операторы верхнего уровня](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/program-structure/top-level-statements#only-one-top-level-file)
+- [В проекте с операторами верхнего уровня нельзя использовать параметр компилятора -main для выбора точки входа, даже если в проекте есть один или несколько методов Main](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/program-structure/top-level-statements#no-other-entry-points)
+- Операторы верхнего уровня неявно находятся в глобальном пространстве имен
+
+Опять же, если не все понятно, то не заморачивайтесь. Потом, с практикой и изучением всё встанет на свои места.
+
