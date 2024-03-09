@@ -12,7 +12,11 @@
 Исходя из этой таблицы выберите подходящую версию .NET для вашей версии macOS. Для большинства примеров в этом курсе 
 могут подойти и .NET 6 или .NET 7, поэтому если у вас нет возможности установить .NET 8 не переживайте.
 
-Скачивайте дистрибутив. В моём случае это был `dotnet-sdk-8.0.201-osx-x64.pkg` и устанавливайте.
+[Скачивайте дистрибутив](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). В моём случае это был `dotnet-sdk-8.0.201-osx-x64.pkg`.
+
+![Установка .NET SDK в macOS](macOSInstall06.png){border-effect="line"}
+
+Устанавливайте, как обычно, в macOS.
 
 ![Установка .NET SDK в macOS](macOSInstall02.png){border-effect="line"}
 
