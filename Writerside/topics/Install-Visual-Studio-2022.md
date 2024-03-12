@@ -78,3 +78,11 @@
 Жмем кнопку установить и ждем пока все закачается и установиться.
 
 ![Установка Visual Studio](VisualSutioInstall10.png){border-effect="line" thumbnail="true" width="621"}
+
+После окончания установки необходимо перезагрузить компьютер.
+
+![Установка Visual Studio](VisualSutioInstall11.png){border-effect="line" thumbnail="true" width="621"}
+
+После перезагрузки в меню пуск появятся новые приложения.
+
+![Установка Visual Studio](VisualSutioInstall12.png){border-effect="line"}
