@@ -10,7 +10,7 @@
 
 *Но есть так же и альтернативные источники загрузки ;)* И кто вам может помешать воспользоваться ими? :)
 
-![Скачивание редакций Visual Studio](VisualSutioInstall01.png){border-effect="line" thumbnail="true" width="621"}
+![Скачивание редакций Visual Studio](VisualSutioInstall01.png){border-effect="line" thumbnail="true" width="700"}
 
 В этом курсе будет использована редакция с максимальными возможностями - Visual Studio Enterprise.
 
@@ -43,9 +43,9 @@
 
 На вкладке **Рабочие нагрузки** чекните указанные галки
 
-![Установка Visual Studio](VisualSutioInstall05.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall05.png){border-effect="line" thumbnail="true" width="700"}
 
-![Установка Visual Studio](VisualSutioInstall06.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall06.png){border-effect="line" thumbnail="true" width="700"}
 
 Рабочие нагрузки, конечно заумное и не очень понятное название, но как есть. Короче это какие приложения вы сможете
 делать с помощью Visual Studio. Полный дистрибутив студии занимает где-то 40Гб. И не всё это, и не всем разработчикам нужно.
@@ -61,11 +61,11 @@
 
 В принципе вы можете выбрать еще эти компоненты:
 
-![Установка Visual Studio](VisualSutioInstall07.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall07.png){border-effect="line" thumbnail="true" width="700"}
 
 В языковых пакетах выберите Английский и Русский языки.
 
-![Установка Visual Studio](VisualSutioInstall08.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall08.png){border-effect="line" thumbnail="true" width="700"}
 
 Хотя конечно же лучше стараться использовать английский интерфейс, так как большинство советов по Visual Studio 
 используют именно английский интерфейс. Но по началу можно использовать и русский язык для интерфейса студии.
@@ -73,37 +73,37 @@
 Расположение установки выберите исходя из своих предпочтений и дискового пространства. Я обычно всегда ставлю 
 НЕ на диск С (не в раздел С, если быть более точным). Но сейчас, для простоты оставлю все по умолчанию.
 
-![Установка Visual Studio](VisualSutioInstall09.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall09.png){border-effect="line" thumbnail="true" width="700"}
 
 Жмем кнопку установить и ждем пока все закачается и установиться.
 
-![Установка Visual Studio](VisualSutioInstall10.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall10.png){border-effect="line" thumbnail="true" width="700"}
 
 После окончания установки необходимо перезагрузить компьютер.
 
-![Установка Visual Studio](VisualSutioInstall11.png){border-effect="line" thumbnail="true" width="621"}
+![Установка Visual Studio](VisualSutioInstall11.png){border-effect="line" thumbnail="true" width="700"}
 
 После перезагрузки в меню пуск появятся новые приложения.
 
 ![Установка Visual Studio](VisualSutioInstall12.png){border-effect="line"}
 
 ## Обновление Visual Studio {id="visual-studio_update"}
-Пока писал эту статью вышло обновление студии, поэтому решил сразу же тут написать как обновлять Visual Studio.
+Пока писал эту статью вышло обновление студии, поэтому решил сразу же написать как обновлять Visual Studio.
 
 Запускаем из меню пуск **Visual Studio Installer** и видим что-то вроде этого:
 
-![Обновление Visual Studio](VisualStudioUpdate01.png){border-effect="line" thumbnail="true" width="621"}
+![Обновление Visual Studio](VisualStudioUpdate01.png){border-effect="line" thumbnail="true" width="700"}
 
 Можете нажать **Посмотреть сведения** или же сразу же нажать **Обновить**, после чего начнётся обновление Visual Studio.
 
-![Обновление Visual Studio](VisualStudioUpdate02.png){border-effect="line" thumbnail="true" width="621"}
+![Обновление Visual Studio](VisualStudioUpdate02.png){border-effect="line" thumbnail="true" width="700"}
 
 После обновления закрываем окно установщика.
 
 ## Создание решения и консольного проекта в Visual Studio с операторами верхнего уровня
 Запускаем Visual Studio. При первом запуске видим это окно:
 
-![Создание проекта в Visual Studio](VisualStudioFirstProject01.png){border-effect="line" thumbnail="true" width="621"}
+![Создание проекта в Visual Studio](VisualStudioFirstProject01.png){border-effect="line" thumbnail="true" width="700"}
 
 В Visual Studio, как и Visual Studio Code есть возможность создать учетную запись разработчика. Она позволяет делать
 много полезных вещей, одна из которых синхронизация настроек студии между разными компьютерами, ну или быстрое 
@@ -112,7 +112,7 @@
 На следующем экране можно выбрать общую цветовую схему для всех или для определенного языка. Я оставлю как есть по
 умолчанию. Эти настройки потом можно будет изменить.
 
-![Создание проекта в Visual Studio](VisualStudioFirstProject02.png){border-effect="line"}
+![Создание проекта в Visual Studio](VisualStudioFirstProject02.png){border-effect="line" thumbnail="true" width="700"}
 
 Ну и наконец запускаем Visual Studio. Первый запуск может занять какое-то время. Вы должны увидеть что-то вроде этого:
 
@@ -148,19 +148,25 @@ Windows, Linux и macOS.
 
 После создания проекта откроется среда Visual Studio.
 
-![Создание проекта в Visual Studio](VisualStudioFirstProject09.png){border-effect="line" thumbnail="true" width="621"}
+![Создание проекта в Visual Studio](VisualStudioFirstProject09.png){border-effect="line" thumbnail="true" width="700"}
 
 Измените код как нас скриншоте и запустите приложение нажав на кнопку запуска без отладки или комбинацию клавиш
 `Ctrl+F5`.
 
-![Запуск проекта в Visual Studio](VisualStudioFirstProject10.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск проекта в Visual Studio](VisualStudioFirstProject10.png){border-effect="line" thumbnail="true" width="700"}
 
 Приложение запуститься в отдельном окне консоли.
 
-![Запуск проекта в Visual Studio](VisualStudioFirstProject11.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск проекта в Visual Studio](VisualStudioFirstProject11.png){border-effect="line" thumbnail="true" width="700"}
 
 Студия так же сообщила что наше приложение завершило работу с кодом 0, то есть все Ок.
 
 Закройте окно консоли нажав любою клавишу или жмакнув по крестику на окне консоли.
 
 Поздравляю! Вы создали и запустили первое приложение в Visual Studio.
+
+У вас на текущий момент должна быть такая структура папок с проектами и решениями.
+
+![Создание проекта в Visual Studio](VisualStudioFirstProject12.png){border-effect="line"  thumbnail="true" width="700"}
+
+Обратите ещё раз внимание какая структура папок была создана для последнего решения и проекта.

@@ -1,4 +1,4 @@
-# Установка .NET SDK в macOS
+# Установка .NET 8.0 SDK в macOS
 [.NET SDK в macOS можно установить двумя способами](https://learn.microsoft.com/ru-ru/dotnet/core/install/macos):
 - автоматическая установка (используется автономный установщик)
 - ручная установка 

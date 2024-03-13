@@ -1,4 +1,4 @@
-# Установка .NET SDK 8 в WSL
+# Установка .NET 8.0 SDK в WSL
 [WSL](https://learn.microsoft.com/ru-ru/windows/wsl/) или [Windows Subsystem for Linux](https://learn.microsoft.com/ru-ru/windows/wsl/faq) -
 это функция операционной системы Windows, которая позволяет запускать файловую
 систему Linux, а также программы командной строки Linux и приложения графического пользовательского интерфейса
