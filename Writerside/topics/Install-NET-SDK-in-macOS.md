@@ -1,4 +1,4 @@
-# Установка .NET 8.0 SDK в macOS
+# Установка .NET 8.0 SDK в macOS (Intel)
 [.NET SDK в macOS можно установить двумя способами](https://learn.microsoft.com/ru-ru/dotnet/core/install/macos):
 - автоматическая установка (используется автономный установщик)
 - ручная установка 
@@ -13,6 +13,9 @@
 могут подойти и .NET 6 или .NET 7, поэтому если у вас нет возможности установить .NET 8 не переживайте.
 
 [Скачивайте дистрибутив](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). В моём случае это был `dotnet-sdk-8.0.201-osx-x64.pkg`.
+
+>Обратите внимание, что мы выбрали x64, так как устанавливаем на ноутбук с процессором Intel.
+{style="note"}
 
 ![Установка .NET SDK в macOS](macOSInstall06.png){border-effect="line"}
 
