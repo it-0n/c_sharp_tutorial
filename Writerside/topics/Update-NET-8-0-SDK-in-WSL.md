@@ -15,6 +15,9 @@
 
 `apt list --upgradable`
 
+>Версии .NET которые вы увидите могут отличаться от тех что на скриншоте. Поскольку время идет. Выходят новые версии.
+{style="note"}
+
 ![Обновление .NET SDK 8 в WSL Ubuntu](dotnetUbuntuUpdate01.png){border-effect="line" thumbnail="true" width="700"}
 
 Я подсветил версии пакета .NET 8.0 SDK, чтобы вы смогли увидеть с какой и на какую версию будет обновлён .NET SDK 8.0.
