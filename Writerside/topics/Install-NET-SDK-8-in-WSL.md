@@ -89,11 +89,11 @@
 
 Так же, если у вас установлен Windows Terminal, там тоже появиться возможность запустить терминал Ubuntu.
 
-![WSL Ubuntu в Windows Terminal](wsl_ubuntu05.png){border-effect="line" thumbnail="true" width="621"}
+![WSL Ubuntu в Windows Terminal](wsl_ubuntu05.png){border-effect="line" thumbnail="true" width="700"}
 
 Вы можете запустить Ubuntu и в Windows Terminal.
 
-![WSL Ubuntu в Windows Terminal](wsl_ubuntu06.png){border-effect="line" thumbnail="true" width="621"}
+![WSL Ubuntu в Windows Terminal](wsl_ubuntu06.png){border-effect="line" thumbnail="true" width="700"}
 
 Закройте все консоли Ubuntu. Мы будем обновлять ядро WSL.
 
@@ -140,7 +140,9 @@
 
 ## Установка .NET SDK в WSL Ubuntu {id="Install_DotNetSKD_WSL_Ubuntu"}
 [Установка .NET SDK в Linux и в частности в Ubuntu возможна несколькими способами](https://learn.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu).
-Мы воспользуемся самым простым.
+
+### Установка из репозитория Ubuntu {id="dotnet_install_from_ubuntu_repository"}
+Это самый простой способ установки. Обычно, для Ubuntu доступна самая последняя версия .NET в её стандартных репозиториях.
 
 Запустите терминал Ubuntu, если он у вас еще не был запущен и дайте там следующую команду
 
@@ -150,18 +152,18 @@
 > Уточняйте в документации Microsoft.
 {style="note"}
 
-![Установка .NET SDK 8 в WSL Ubuntu](wsl_ubuntu_SDK8_install01.png){border-effect="line" thumbnail="true" width="621"}
+![Установка .NET SDK 8 в WSL Ubuntu](wsl_ubuntu_SDK8_install01.png){border-effect="line" thumbnail="true" width="700"}
 
 Вас снова попросят ввести пароль. Привыкайте к этому в Linux. После ввода пароля жмите Enter и начнется установка
 .NET SDK 8.
 
-![Установка .NET SDK 8 в WSL Ubuntu](wsl_ubuntu_SDK8_install02.png){border-effect="line" thumbnail="true" width="621"}
+![Установка .NET SDK 8 в WSL Ubuntu](wsl_ubuntu_SDK8_install02.png){border-effect="line" thumbnail="true" width="700"}
 
 Дождитесь окончания установки .NET SDK 8. И затем дайте команду:
 
 `dotnet --info`
 
-![Установка .NET SDK 8 в WSL Ubuntu](wsl_ubuntu_SDK8_install03.png){border-effect="line" thumbnail="true" width="621"}
+![Установка .NET SDK 8 в WSL Ubuntu](wsl_ubuntu_SDK8_install03.png){border-effect="line" thumbnail="true" width="700"}
 
 Чтобы посмотреть какие версии .NET SDK и .NET Runtime были установлены.
 
@@ -230,13 +232,13 @@
 Эта команда создаст текстовый файл с именем test.txt, запишет в него слово TEST, покажет содержимое каталога
 и затем выведет содержимое файла test.txt в консоль.
 
-![Как создать файл в Ubuntu](wsl_files00.png){border-effect="line" thumbnail="true" width="621"}
+![Как создать файл в Ubuntu](wsl_files00.png){border-effect="line" thumbnail="true" width="700"}
 
 Теперь откройте проводник Windows, прокрутите область навигации вниз и там вы должны увидеть значок Linux, раскройте его,
 далее раскройте папку Ubuntu, затем папку home, в которой обычно хранятся папки пользователей Linux, и затем раскройте папку
 с именем пользователя которого вы создали во время установки WSL Ubuntu. Там вы должны увидеть файлы, которые мы создали.
 
-![Как получить доступ к файлам WSL Ubuntu из Проводника Windows](wsl_files01.png){border-effect="line" thumbnail="true" width="621"}
+![Как получить доступ к файлам WSL Ubuntu из Проводника Windows](wsl_files01.png){border-effect="line" thumbnail="true" width="700"}
 
 Давайте отроем файл test.txt, чтобы убедиться что это тот, который мы создали.
 
@@ -250,7 +252,7 @@
 
 `cat test.txt`
 
-![Просмотр файла test.txt в Ubuntu](wsl_files04.png){border-effect="line" thumbnail="true" width="621"}
+![Просмотр файла test.txt в Ubuntu](wsl_files04.png){border-effect="line" thumbnail="true" width="700"}
 
 Мы можем увидеть наши изменения.
 
@@ -258,7 +260,7 @@
 
 `\\\wsl$`
 
-![Просмотр файловой системы WSL](wsl_files05.png){border-effect="line" thumbnail="true" width="621"}
+![Просмотр файловой системы WSL](wsl_files05.png){border-effect="line" thumbnail="true" width="700"}
 
 На скриншоте видно, что этот способ идентичен, описанному выше. Его можно использовать для прямого доступа к файлам WSL
 из Windows. Например, нажмите `Win+r` и введите следующий путь и нажмите ОК:
@@ -313,18 +315,18 @@
 
 Введите пароль пользователя и дождитесь установки.
 
-![Установка midnight commander в WSL Ubuntu](wsl_files09.png){border-effect="line" thumbnail="true" width="621"}
+![Установка midnight commander в WSL Ubuntu](wsl_files09.png){border-effect="line" thumbnail="true" width="700"}
 
 Далее дайте команду `mc` и вы должны увидеть midnight commander во всей красе:
 
-![midnight commander в WSL Ubuntu](wsl_files10.png){border-effect="line" thumbnail="true" width="621"}
+![midnight commander в WSL Ubuntu](wsl_files10.png){border-effect="line" thumbnail="true" width="700"}
 
 Первым заданием для этой части будет перейти на правой панели mc в каталог с нашими проектами C#, 
 как вы видите на скриншоте выше.
 
 Второе, перейти в левой панели в каталог с нашими проектами, как вы видите на скриншоте ниже:
 
-![midnight commander в WSL Ubuntu](wsl_files11.png){border-effect="line" thumbnail="true" width="621"}
+![midnight commander в WSL Ubuntu](wsl_files11.png){border-effect="line" thumbnail="true" width="700"}
 
 Да пребудет с тобой сила, падаван!
 
@@ -341,7 +343,7 @@
 Исправляется это просто установкой галки **Disable Side Channel Mitigations for Hyper-V enabled host** в свойствах виртуальной
 машины:
 
-![Запуск второй программы C# в WSL Ubuntu](vmwareworkstation03.png){border-effect="line"  thumbnail="true" width="621"}
+![Запуск второй программы C# в WSL Ubuntu](vmwareworkstation03.png){border-effect="line"  thumbnail="true" width="700"}
 
 Если же вы решите установить VMWare Workstation уже после того как установили WSL, то при установке получите вот такое сообщение:
 
