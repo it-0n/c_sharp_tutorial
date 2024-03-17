@@ -170,3 +170,26 @@ Windows, Linux и macOS.
 ![Создание проекта в Visual Studio](VisualStudioFirstProject12.png){border-effect="line"  thumbnail="true" width="700"}
 
 Обратите ещё раз внимание какая структура папок была создана для последнего решения и проекта.
+
+## Добавление в решение консольного проекта в Visual Studio без операторов верхнего уровня {id="visual-studio_add_project"}
+Нажмите правой кнопкой мышки на названии решения, и выберите **Добавить** и затем **Создать проект**.
+
+![Добавление проекта в решение в Visual Studio](VisualStudioSecondProject01.png){border-effect="line" thumbnail="true" width="700"}
+
+Откроется уже знакомое вам окно выбора параметров создаваемого приложения. Как правило, по умолчанию будет использован
+последний тип проекта, который вы создавали. Выберите все как на скриншоте ниже и нажмите **Далее**
+
+![Добавление проекта в решение в Visual Studio](VisualStudioSecondProject02.png){border-effect="line"}
+
+В следующем окне задайте имя создаваемому проекту `ex0007_vs_project02` и нажмите **Далее**
+
+![Добавление проекта в решение в Visual Studio](VisualStudioSecondProject03.png){border-effect="line"}
+
+В следующем окне поставьте галку **Не использовать операторы верхнего уровня** и нажмите **Создать**
+
+![Добавление проекта в решение в Visual Studio](VisualStudioSecondProject04.png){border-effect="line"}
+
+Вы должны увидеть что-то вроде этого:
+
+![Добавление проекта в решение в Visual Studio](VisualStudioSecondProject05.png){border-effect="line" thumbnail="true" width="700"}
+
