@@ -12,6 +12,7 @@
         <toc-element topic="how_to_install_dotnet_sdk_and_write_first_code.md">
             <toc-element topic="Install-NET-SDK-8-in-Windows.md"/>
             <toc-element topic="how-to-crate-csharp-windows-command-line.md"/>
+            <toc-element topic="Upgrade-NET-SDK-in-Windows.md"/>
             <toc-element topic="Install-NET-SDK-8-in-WSL.md"/>
             <toc-element topic="How-to-create-csharp-project-Ubuntu.md"/>
             <toc-element topic="Update-NET-8-0-SDK-in-WSL.md"/>
