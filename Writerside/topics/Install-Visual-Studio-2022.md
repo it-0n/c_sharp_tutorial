@@ -193,3 +193,40 @@ Windows, Linux и macOS.
 
 ![Добавление проекта в решение в Visual Studio](VisualStudioSecondProject05.png){border-effect="line" thumbnail="true" width="700"}
 
+Приведите код к следующему виду и запустите проект на выполнение.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject06.png){border-effect="line" thumbnail="true" width="700"}
+
+Опаньки! Запустился наш первый проект. Как такое вышло? А это уже особенности Visual Studio. Обратите внимание на **Обозреватель
+решения**. Проект, который будет запускаться по умолчанию выделен жирным шрифтом. Поэтому, не смотря на то что курсор в 
+**Обозревателе решения** стоит на втором проекте, а так же то, что у нас открыт редактор кода на файле Program.cs второго проекта,
+запускаться при нажатии на кнопку **Запуск без отладки** или при нажатии `Ctrl+F5` будет все равно первый проект.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject07.png){border-effect="line" thumbnail="true" width="700"}
+
+Запустить нужный проект в студии можно несколькими способами. Первый это сделать наш проект запускаемым по умолчанию.
+Для этого жмем правой кнопкой мыши на название нашего проекта и выбираем **Назначить в качестве запускаемого проекта**.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject08.png){border-effect="line" thumbnail="true" width="700"}
+
+После этого второй проект будет выделен жирным шрифтом, а так же он будет выбран в раскрывающихся списках запускаемого
+по умолчанию проекта.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject09.png){border-effect="line" thumbnail="true" width="700"}
+
+Давайте теперь запустим второй проект.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject10.png){border-effect="line" thumbnail="true" width="700"}
+
+Теперь запустим первый проект. Для этого нажмем правой кнопкой мыши по названию первого проекта, далее выбрать **Отладка**
+и затем **Запуск без отладки**.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject11.png){border-effect="line" thumbnail="true" width="700"}
+
+После этого будет запущен первый проект.
+
+![Запуск второго проекта в Visual Studio](VisualStudioSecondProject12.png){border-effect="line" thumbnail="true" width="700"}
+
+Пока этих двух способов запуска проекта будет достаточно.
+
+На текущий момент вы должны уже уметь создавать и запускать приложения в Visual Studio Code и в Visual Studio.
