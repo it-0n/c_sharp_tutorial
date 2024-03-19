@@ -52,7 +52,7 @@ ex0001, ex0002 и т.д.
 
 И посмотрим содержимое каталога командой `dir`
 
-![Создание проекта C# в командной строке Windows](ex0001_creation.png){ border-effect="line" thumbnail="true" width="621"}
+![Создание проекта C# в командной строке Windows](ex0001_creation.png){ border-effect="line" thumbnail="true" width="700"}
 
 Рассмотри подробнее команду `dotnet new console -o ex0001_hello_world`.
 
@@ -86,12 +86,12 @@ ex0001, ex0002 и т.д.
 
 `dotnet new list`
 
-![Посмотреть список шаблонов dotnet](dotnetnewlist.png){border-effect="line" thumbnail="true" width="621"}
+![Посмотреть список шаблонов dotnet](dotnetnewlist.png){border-effect="line" thumbnail="true" width="700"}
 
 Теперь давайте посмотрим на код(текст) нашей программы **Program.cs**. Откройте её в любом текстовом редакторе например
 в Блокноте(notepd). Вам нужно открыть файл **Program.cs**, находящийся в каталоге **D:\it0nCS\episode01\ex0001_hello_world**
 
-![Открыть файл Program.CS в Блокноте](openProgramCS.png){ order-effect="line" thumbnail="true" width="621"}
+![Открыть файл Program.CS в Блокноте](openProgramCS.png){ order-effect="line" thumbnail="true" width="700"}
 
 Вы должны увидеть текст(код), программы:
 
@@ -122,14 +122,14 @@ Console.WriteLine("Hello, World!");
 Теперь заглянем в каталог bin, нашего проекта, там будет папка Debug, а в ней папка net8.0. Вот тут и располагается готовое
 к запуску наше приложение.
 
-![Дерево папок и файлы приложения](ex0001_tree_explorer.png){border-effect="line" thumbnail="true" width="621"}
+![Дерево папок и файлы приложения](ex0001_tree_explorer.png){border-effect="line" thumbnail="true" width="700"}
 
 На данный момент в консоли вы должны находиться в папке **ex0001_hello_worl**. Давайте перейдем в папку `bin\Debug\net8.0`
 дав команду `cd bin\Debug\net8.0\`
 
 Затем посмотрим ее содержимое командой `dir` и далее запустим нашу программу `ex0001_hello_world.exe`
 
-![Запуск скомпилированного приложения](ex0001_run_exe.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск скомпилированного приложения](ex0001_run_exe.png){border-effect="line" thumbnail="true" width="700"}
 
 Как вы можете видеть в папке, кроме исполняемого файла `ex0001_hello_world.exe` есть еще несколько других файлов. Чтобы
 эта программа запустилась на другом компьютере необходимы следующие условия:
@@ -150,7 +150,7 @@ Console.WriteLine("Hello, World!");
 Если вы дадите в консоли команду `dotnet new console -h`, чтобы посмотреть справку по возможным ключам для создания
 консольного приложения (для шаблона console), то увидите следующее:
 
-![dotnet new console -h](dotnetnewconsole-h.png){ border-effect="line" thumbnail="true" width="621"}
+![dotnet new console -h](dotnetnewconsole-h.png){ border-effect="line" thumbnail="true" width="700"}
 
 Кстати там много и других интересных и полезных ключей, некоторые из которых мы рассмотрим в других упражнениях.
 
@@ -172,7 +172,7 @@ Console.WriteLine("Hello, World!");
 
 Посмотрите каталог командой `dir`
 
-![dotnet new console --use-program-main](dotnetnewconsole--use-program-main.png){border-effect="line" thumbnail="true" width="621"}
+![dotnet new console --use-program-main](dotnetnewconsole--use-program-main.png){border-effect="line" thumbnail="true" width="700"}
 
 Обратите внимание, что в команде создания приложения в этом упражнении нет ключа `-o`, который создает папку для приложения.
 Я опустил этот ключ, так как мы создали паку для приложения сами, затем зашли в нее, и уже там создали приложение.
@@ -185,7 +185,7 @@ Console.WriteLine("Hello, World!");
 
 Давайте посмотрим, на код в файле Program.cs. 
 
-![Вид в проводнике Program.cs](ex0002-01.png){ border-effect="line" thumbnail="true" width="621"}
+![Вид в проводнике Program.cs](ex0002-01.png){ border-effect="line" thumbnail="true" width="700"}
 
 Откройте его в каком-нибудь текстовом редакторе. В этот раз я открою файл в редакторе SublimeText, который делает приятную
 подсветку синтаксиса (команд языка).
@@ -294,7 +294,7 @@ Console.WriteLine("Hello, World!");
 
 Откройте файл Program.cs, находящийся в директории ex0003_args и приведите его к следующему виду:
 
-![ex0003 Program.cs](ex0003_ProgramCS.png){border-effect="line" thumbnail="true" width="621"}
+![ex0003 Program.cs](ex0003_ProgramCS.png){border-effect="line" thumbnail="true" width="700"}
 
 Запустите программу:
 
@@ -372,20 +372,20 @@ if(args.Length > 0 )
 специализацию. То есть объединяют в себе маленькие программы, которые решают задачи в какой-либо одной предметной области.
 Например, есть математические библиотеки или библиотеки работы с сетью и т.п.
 
-![ex0003 Program.cs](ex0003_ProgramCS01.png){border-effect="line" thumbnail="true" width="621"}
+![ex0003 Program.cs](ex0003_ProgramCS01.png){border-effect="line" thumbnail="true" width="700"}
 
 Для справочки и пущего понимания приведу лишь небольшую часть кода, который скрывается за, казалось бы, простым методом
 **WriteLine()**. Это пришлось очень углубиться в недры библиотеки **System**. Ясен пень что сейчас вы не поймете этого кода.
 Но зато будете знать, что кто-то для вас потрудился и написал, то чем вы сейчас пользуетесь в своей программе.
 
-![WriteLine lib](ex0003_write.png){border-effect="line" thumbnail="true" width="621"}
+![WriteLine lib](ex0003_write.png){border-effect="line" thumbnail="true" width="700"}
 
 ### Практическое задание
 
 Пришло время практического задания. Создайте приложение ex0003pt01, в каталоге episode01 без операторов верхнего уровня.
 Как это сделать вы уже знаете. Структура папок должна выглядеть так:
 
-![ex0003pt01 folders Program.cs](ex0003_pt01.png){border-effect="line" thumbnail="true" width="621"}
+![ex0003pt01 folders Program.cs](ex0003_pt01.png){border-effect="line" thumbnail="true" width="700"}
 
 >pt - это сокращение от слов practical task (практическая задача).
 > {style="note"}
@@ -397,7 +397,7 @@ if(args.Length > 0 )
 аргументов командной строки, выводить приветствие первого аргумента. Если аргументов при запуске программы нет, то программа
 не должна ни чего выводить. Смотрите пример того как должно работать приложение **ex0003pt01** на скриншоте ниже:
 
-![ex0003pt01 Program.cs](ex0003pt01.png){border-effect="line" thumbnail="true" width="621"}
+![ex0003pt01 Program.cs](ex0003pt01.png){border-effect="line" thumbnail="true" width="700"}
 
 Обратите внимание на предпоследний запуск. Программа была запущена без аргументов.
 

@@ -22,6 +22,7 @@
         <toc-element topic="Install_IDE_for_CSharp.md">
             <toc-element topic="Install-Visual-Studio-Code-in-Windows.md"/>
             <toc-element topic="Install-Visual-Studio-2022.md"/>
+            <toc-element topic="Install-JetBrains-Rider-in-Windows.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
