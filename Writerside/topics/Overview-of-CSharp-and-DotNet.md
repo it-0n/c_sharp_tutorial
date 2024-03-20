@@ -151,20 +151,20 @@ C# - это язык программирования для платформы 
 
 Что бы стало ещё чуточку понятнее посмотрите на скриншот страницы загрузки SDK и Runtime для .NET 8.
 
-![Пример страницы загрузки .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample01.png){ border-effect="line" thumbnail="true" width="621"}
+![Пример страницы загрузки .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample01.png){ border-effect="line" thumbnail="true" width="700"}
 
 Как видите есть два варианта загрузки: SDK и Runtime. И в каждом из них есть загрузки под различные ОС и архитектуры процессоров.
 
 Кроме того существует несколько версий .NET и по этой [ссылке](https://dotnet.microsoft.com/en-us/download/dotnet) можно увидеть их все.
 
-![Пример страницы загрузки всех версий .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample02.png){ border-effect="line" thumbnail="true" width="621"}
+![Пример страницы загрузки всех версий .NET SDK и .NET Runtime](dotnetSDKandRuntimeExample02.png){ border-effect="line" thumbnail="true" width="700"}
 
 Как вы можете видеть на скриншоте выше у разных версий .NET разный срок поддержки. Существуют так называемые версии LTS (Long Term Support)
 или версии с долгосрочной поддержкой, которые поддерживаются 3 года. И есть промежуточные версии STS (Standard Term Support), которые поддерживаются полтора года.
 
 На скриншоте ниже более наглядно видно время поддержки LTS и STS версий .NET.
 
-![Время поддержки LTS и STS версий .NET](dotnetSDKandRuntimeExample03.png){ border-effect="line" thumbnail="true" width="621"}
+![Время поддержки LTS и STS версий .NET](dotnetSDKandRuntimeExample03.png){ border-effect="line" thumbnail="true" width="700"}
 
 Полее подробно можно почитать [тут](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)
 
@@ -179,14 +179,14 @@ C# - это язык программирования для платформы 
 ### Способ №1
 Наверное самый простой, но не самый точный способ это через Панель управления -> Программы -> Включение или отключение компонентов Windows
 
-![Как узнать версию установленного .NET Framework через панель управления](getDotNetFrameworkVersion03.png){ border-effect="line" thumbnail="true" width="621"}
+![Как узнать версию установленного .NET Framework через панель управления](getDotNetFrameworkVersion03.png){ border-effect="line" thumbnail="true" width="700"}
 
 ### Способ №2
 Второй способ, наиболее точный, через командную строку запущенную с правами администратора. Надо дать следующую команду:
 
 `reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP\v4" /s`
 
-![Как узнать версию установленного .NET Framework через командную строку](getDotNetFrameworkVersion02.png){ border-effect="line" thumbnail="true" width="621"}
+![Как узнать версию установленного .NET Framework через командную строку](getDotNetFrameworkVersion02.png){ border-effect="line" thumbnail="true" width="700"}
 
 Данная команда показывает какая точно версия .NET Framework 4 установлена в системе.
 
@@ -202,7 +202,7 @@ C# - это язык программирования для платформы 
 
 `Get-STDotNetVersion`
 
-![Как узнать версию установленного .NET Framework через PowerShell](getDotNetFrameworkVersion01.png){ border-effect="line" thumbnail="true" width="621"}
+![Как узнать версию установленного .NET Framework через PowerShell](getDotNetFrameworkVersion01.png){ border-effect="line" thumbnail="true" width="700"}
 
 Как видите в Windows 10 уже предустановлен .NET Framework версии 4.8.x.
 
@@ -212,8 +212,8 @@ C# - это язык программирования для платформы 
 Если .NET Core не установлен в вашей системе, то вы получите сообщение об ошибке, что такой команды нет, а если установлена,
 то получите список установленных версий для SDK и Runtime:
 
-![Как узнать версию установленного .NET Core](getDotNetCoreVersion01.png){ border-effect="line" thumbnail="true" width="621"}
+![Как узнать версию установленного .NET Core](getDotNetCoreVersion01.png){ border-effect="line" thumbnail="true" width="700"}
 
 Эту же самую команду можно дать и в других ОС, Linux или macOS. Вы получите примерно такой же вывод команды.
 
-![Как узнать версию установленного .NET Core в Linux](getDotNetCoreVersion02.png){ border-effect="line" thumbnail="true" width="621"}
+![Как узнать версию установленного .NET Core в Linux](getDotNetCoreVersion02.png){ border-effect="line" thumbnail="true" width="700"}

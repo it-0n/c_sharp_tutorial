@@ -34,7 +34,6 @@ JetBrains Rider можно бесплатно использовать 30 дне
 ![Установка JetBrains Rider в Windows](InstallJetBrainsWindows06.png){ border-effect="line"}
 
 ## Создание решения и консольного проекта в Rider с операторами верхнего уровня
-
 При первом запуске вам зададут пару вопросов.
 
 Ставим соглашалку и жмем **Continue**.
@@ -68,4 +67,41 @@ JetBrains Rider можно бесплатно использовать 30 дне
 
 Блин! Ну когда же оно запуститься?! Жмите **Continue**
 
+![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows08.png){ border-effect="line"}
 
+Жмём **New Solution**
+
+![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows09.png){ border-effect="line"}
+
+Далее, в разделе .NET / .NET Core, выбираем Console Application и заполняем поля названия решения и проекта, а так же
+правильно выбираем директорию. Как будет выглядеть структура каталогов и файлов проекта и решения можно видеть чуть 
+ниже всех настроек. После того как правильно введёте все нужные данные жмите кнопку **Create**.
+
+![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows10.png){ border-effect="line"}
+
+Rider создаст решение и проект и вы должны увидеть что-то вроде этого:
+
+![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows11.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Закройте окно **AI Assistant** и запустите проект на исполнение. В результате вы должны получить что-то вроде этого:
+
+![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows12.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Поздравляю! Вы запустили приложение в Rider!
+
+## Добавление в решение консольного проекта в Rider без операторов верхнего уровня {id="rider_add_project_to_solution"}
+Теперь добавим второй проект консольного приложения без операторов верхнего уровня. Для этого нажмите на названии решения
+правой кнопкой мыши и выберите **Add** и затем **New Project...** или нажмите `Ctrl+Shift+N`.
+
+![Второе приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows13.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Выберите создание консольного приложения, заполните поля как на скриншоте и жмите **Create**.
+
+![Второе приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows14.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Приведите код к виду как показано на скриншоте и запустите проект, предварительно выбрав его для запуска в раскрывающемся
+списке. Вы должны получить что-то вроде этого:
+
+![Второе приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows15.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Поздравляю! Вы добавили в решение второй проект и запустили его.
