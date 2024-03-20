@@ -7,6 +7,7 @@
             <noindex-content>false</noindex-content>
             <primary-color>emerald</primary-color>
             <header-logo>LogoITon-12.svg</header-logo>
+            <custom-favicons>favicon.png</custom-favicons>
         </variables>
     </build-profile>
 
