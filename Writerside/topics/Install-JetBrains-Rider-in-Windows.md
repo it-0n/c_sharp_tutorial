@@ -105,3 +105,47 @@ Rider создаст решение и проект и вы должны уви�
 ![Второе приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows15.png){ border-effect="line"  thumbnail="true" width="700"}
 
 Поздравляю! Вы добавили в решение второй проект и запустили его!!
+
+## Работа в Rider с проектами в WSL 
+В Rider есть, так же как и в VSCode, есть возможность работы с WSL. Закройте и заново запустите Rider. Вы должны увидеть 
+список предыдущих проектов, а так же возможность запуска работы с WSL.
+
+![Работа в Rider в WSL](RiderWSL01.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Выберите в раскрывающемся списке **Connect to host...**
+
+![Работа в Rider в WSL](RiderWSL02.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И затем Ubuntu и нажмите **Next**
+
+![Работа в Rider в WSL](RiderWSL03.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Rider начнёт запускать WSL и подготавливать её к работе.
+
+![Работа в Rider в WSL](RiderWSL04.png){ border-effect="line"  thumbnail="true" width="700"}
+
+![Работа в Rider в WSL](RiderWSL05.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Затем вам надо будет выбрать проект в WSL, нажмите на плюсик
+
+![Работа в Rider в WSL](RiderWSL06.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Rider опять задумается на некоторое время
+
+![Работа в Rider в WSL](RiderWSL07.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И далее вам надо будет выбрать файл решения
+
+![Работа в Rider в WSL](RiderWSL08.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Выберите файл решения **ex0008_JetBrainsRider_solution.sln**
+
+![Работа в Rider в WSL](RiderWSL09.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И нажмите Download IDE and Connect
+
+![Работа в Rider в WSL](RiderWSL10.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Далее Rider опять задумается и затем нажмите **Connect to WSL**
+
+![Работа в Rider в WSL](RiderWSL11.png){ border-effect="line"  thumbnail="true" width="700"}
