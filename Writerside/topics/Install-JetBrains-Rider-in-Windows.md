@@ -144,8 +144,8 @@ Rider опять задумается на некоторое время
 
 И нажмите Download IDE and Connect
 
-![Работа в Rider в WSL](RiderWSL10.png){ border-effect="line"  thumbnail="true" width="700"}
+Вам надо будет дождаться пока Rider скачает IDE Backend и запустит его в WSL. Конечно 1,5Гб впечатляют.
+В VSCode такого не было.
 
-Далее Rider опять задумается и затем нажмите **Connect to WSL**
+![Работа в Rider в WSL](RiderWSL13.png){ border-effect="line"}
 
-![Работа в Rider в WSL](RiderWSL11.png){ border-effect="line"  thumbnail="true" width="700"}
