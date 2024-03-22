@@ -333,7 +333,11 @@ solution. Посмотрите содержимое этого файла.
 
 Появится уведомление. Нажмите **Don't ask**. На скриншоте я так же добавил пояснения для некоторых основных элементов управления.
 
-![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode06.png){border-effect="line" thumbnail="true" width="700"}
+![Установка плагинов C# в VSCode для WSL](PolyglotVSCode06.png){border-effect="line" thumbnail="true" width="700"}
+
+Так же не будет лишним установить плагины C# для WSL.
+
+![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode13.png){border-effect="line" thumbnail="true" width="700"}
 
 Ну всё! Можно изучать C# в блокноте. Блокноты C# и Python используют концепцию активных ячеек, то есть вы вводите в ячейку оператор
 или несколько и можете выполнить этот блок кода. Это удобно когда нужно поэкспериментировать с небольшими кусками кода и
