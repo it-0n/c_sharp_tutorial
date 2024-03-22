@@ -5,7 +5,7 @@
 ## Краткое описание установки VSCode в Windows
 Идем на [сайт Visual Studio Code](https://code.visualstudio.com/), качаем установщик и устанавливаем :) Что уж проще? 
 
-![Загрузка VS Code](VSCode01.png){border-effect="line" thumbnail="true" width="621"}
+![Загрузка VS Code](VSCode01.png){border-effect="line" thumbnail="true" width="700"}
 
 После установки VSCode (так сокращенно называют Visual Studio Code), необходимо установить плагины для разработки приложений
 на C#. Хотя по существу надо установить один плагин [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit), а он уже подтянет сам несколько других, которые ему необходимы
@@ -14,14 +14,14 @@
 Для установки плагина запускаете VSCode, затем кликаете по иконке управления плагинами, в поиске вводите **C# Dev Kit**.
 И затем жмете кнопку установить. После установки надо будет перезапустить VSCode.
 
-![Установка плагина C# Dev Kit для VSCode](VSCode02.png){border-effect="line" thumbnail="true" width="621"}
+![Установка плагина C# Dev Kit для VSCode](VSCode02.png){border-effect="line" thumbnail="true" width="700"}
 
 > У меня плагины уже установлены, поэтому рядом с ними нет кнопочки установить.
 > {style="note"}
 
 Так же установите плагин [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
 
-![Установка плагина WSL для VSCode](VSCode03.png){border-effect="line" thumbnail="true" width="621"}
+![Установка плагина WSL для VSCode](VSCode03.png){border-effect="line" thumbnail="true" width="700"}
 
 Этого уже достаточно, чтобы начать разрабатывать программы на C# в VSCode.
 
@@ -66,7 +66,7 @@ solution. Посмотрите содержимое этого файла.
 Далее создайте проект C# с названием `ex0006VSCodeProject01` с операторами верхнего уровня. Посмотрите теперь содержимое 
 текущего каталога и каталога созданного решения.
 
-![Создание проекта C# в CLI](VSCode_Solution03.png){border-effect="line" thumbnail="true" width="621"}
+![Создание проекта C# в CLI](VSCode_Solution03.png){border-effect="line" thumbnail="true" width="700"}
 
 Теперь давайте добавим наш проект `ex0006VSCodeProject01` в файл решения командой:
 
@@ -80,7 +80,7 @@ solution. Посмотрите содержимое этого файла.
 
 Давайте теперь посмотрим содержимое файла `VSCodeSolution01.sln`:
 
-![Файл решения после добавления проекта](VSCode_Solution05.png){border-effect="line" thumbnail="true" width="621"}
+![Файл решения после добавления проекта](VSCode_Solution05.png){border-effect="line" thumbnail="true" width="700"}
 
 Как видим в файле решения появилась информация о файле проекта. Пока тоже не будем вдаваться в подробности формата файла
 решения. Всему свое время. Это пока не самое важное для нас.
@@ -98,27 +98,27 @@ solution. Посмотрите содержимое этого файла.
 У вас спросят доверяете ли вы этому проекту. Конечно доверяем! Мы его сами создали! Жмакаем по галкам и кнопкам как 
 на скриншоте.
 
-![Открытие решения и проекта C# в VSCode](VSCode_Solution06.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие решения и проекта C# в VSCode](VSCode_Solution06.png){border-effect="line" thumbnail="true" width="700"}
 
 Во время первого открытия проекта VSCode может выводить некоторые сообщения. На них, пока, можно не обращать внимания.
 Он немного пошумит и успокоится. В результате вы должны увидеть что-то подобное:
 
-![Открытие решения и проекта C# в VSCode](VSCode_Solution07.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие решения и проекта C# в VSCode](VSCode_Solution07.png){border-effect="line" thumbnail="true" width="700"}
 
 В левой панели навигации раскройте каталог проекта, а затем раскройте **Обозреватель решений** и в нем наш проект.
 Выделите файл **Program.cs** и отредактируйте его как на скриншоте.
 
-![Открытие решения и проекта C# в VSCode](VSCode_Solution08.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие решения и проекта C# в VSCode](VSCode_Solution08.png){border-effect="line" thumbnail="true" width="700"}
 
 ## Запуск проекта в VSCode через встроенный терминал {id="vscode_start_project"}
 В **Обозревателе решений** или в **Проводнике** VSCode кликните правой кнопкой мыши по любому файлу проекта и выберите 
 **Открыть во встроенном терминале**.
 
-![Открытие решения и проекта C# в VSCode](VSCode_Solution09.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие решения и проекта C# в VSCode](VSCode_Solution09.png){border-effect="line" thumbnail="true" width="700"}
 
 И затем в терминале дайте уже известную вам команду запуска проекта на выполнение `dotnet run`.
 
-![Запуск проекта C# в терминале VSCode](VSCode_Solution10.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск проекта C# в терминале VSCode](VSCode_Solution10.png){border-effect="line" thumbnail="true" width="700"}
 
 Поздравляю вас! Вы запустили свой первый проект в составе решения в VSCode.
 
@@ -130,15 +130,15 @@ solution. Посмотрите содержимое этого файла.
 
 `dotnet sln add ex0006VSCodeProject02`
 
-![Создание и добавление второго проекта в решение](VSCode_Solution11.png){border-effect="line" thumbnail="true" width="621"}
+![Создание и добавление второго проекта в решение](VSCode_Solution11.png){border-effect="line" thumbnail="true" width="700"}
 
 Перейдите в VSCode. Вы должны увидеть, что в обозревателе решений был добавлен наш проект:
 
-![VSCode добавлен второй проект](VSCode_Solution12.png){border-effect="line" thumbnail="true" width="621"}
+![VSCode добавлен второй проект](VSCode_Solution12.png){border-effect="line" thumbnail="true" width="700"}
 
 Раскройте узел проекта `ex0006VSCodeProject02` и приведите файл **Program.cs** в этом проекте к следующему виду:
 
-![Редактирование кода второго проекта](VSCode_Solution13.png){border-effect="line" thumbnail="true" width="621"}
+![Редактирование кода второго проекта](VSCode_Solution13.png){border-effect="line" thumbnail="true" width="700"}
 
 > Обратите внимание, что сейчас у нас есть два файла Program.cs, но они находятся в разных проектах и разных пространствах
 > имен (namespace). Редактируйте файл второго проекта.
@@ -147,11 +147,11 @@ solution. Посмотрите содержимое этого файла.
 ## Запуск второго проекта C# во встроенном терминале {id="start_second_project"}
 Кликните правой кнопкой мыши по любому файлу второго проекта и выберите **Открыть во встроенном терминале**
 
-![Редактирование кода второго проекта](VSCode_Solution14.png){border-effect="line" thumbnail="true" width="621"}
+![Редактирование кода второго проекта](VSCode_Solution14.png){border-effect="line" thumbnail="true" width="700"}
 
 Запустите программу командой `dotnet run`
 
-![Запуск второго проекта](VSCode_Solution15.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск второго проекта](VSCode_Solution15.png){border-effect="line" thumbnail="true" width="700"}
 
 > Вы можете переключаться между открытыми терминалами в указанной области. Так же вы можете переименовать, изменить цвет
 > и т.п. для выбранного терминала правым щелчком по нему.
@@ -171,7 +171,7 @@ solution. Посмотрите содержимое этого файла.
 сообщение об ошибке, что не удалось найти выполняемый проект и бла бла бла. Кстати это важное бла бла бла :). Теперь
 запустите исполняемый файл `ex0006VSCodeProject02.exe` на выполнение. Вы увидите нормальное выполнение программы.
 
-![Запуск второго проекта разными способами](VSCode_Solution16.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск второго проекта разными способами](VSCode_Solution16.png){border-effect="line" thumbnail="true" width="700"}
 
 Сравните текущие директории при первом и втором запуске программы, сравните как она запускалась. Помедитируйте на это.
 Не беда если сразу не дойдет. Чуть позже поймете.
@@ -200,11 +200,11 @@ solution. Посмотрите содержимое этого файла.
 `D:\it0nCS\episode01\ex0006_vscode_solution` дайте команду `dotnet clean` и наслаждайтесь зрелищем уничтожения временных 
 файлов :)
 
-![Очистка решения командой dotnet clean](VSCode_Solution17.png){border-effect="line" thumbnail="true" width="621"}
+![Очистка решения командой dotnet clean](VSCode_Solution17.png){border-effect="line" thumbnail="true" width="700"}
 
 В выводе команды `dotnet clean` хорошо видно какие файлы были удалены?
 
-![Очистка решения командой dotnet clean](VSCode_Solution18.png){border-effect="line" thumbnail="true" width="621"}
+![Очистка решения командой dotnet clean](VSCode_Solution18.png){border-effect="line" thumbnail="true" width="700"}
 
 Хотя конечно эта команда удаляет не все так тотально, как если бы удалить каталоги **bin** и **obj**.
 
@@ -220,23 +220,23 @@ solution. Посмотрите содержимое этого файла.
 
 После этого вверху откроется список выбора шаблона приложения. Выберите консольное приложение.
 
-![Выбор консольного приложения](VSCode_Solution20.png){border-effect="line" thumbnail="true" width="621"}
+![Выбор консольного приложения](VSCode_Solution20.png){border-effect="line" thumbnail="true" width="700"}
 
 Введите имя создаваемого проекта `ex0006VSCodeProject03` и нажмите Enter.
 
-![Ввод имени создаваемого приложения](VSCode_Solution21.png){border-effect="line" thumbnail="true" width="621"}
+![Ввод имени создаваемого приложения](VSCode_Solution21.png){border-effect="line" thumbnail="true" width="700"}
 
 Затем выберите каталог по умолчанию для создаваемого проекта.
 
-![Выбор каталога для приложения](VSCode_Solution22.png){border-effect="line" thumbnail="true" width="621"}
+![Выбор каталога для приложения](VSCode_Solution22.png){border-effect="line" thumbnail="true" width="700"}
 
 После этого будет создан проект. И вы сможете его увидеть как в **Обозревателе решений**, так и в **Проводнике** VSCode.
 
-![Созданный проект](VSCode_Solution23.png){border-effect="line" thumbnail="true" width="621"}
+![Созданный проект](VSCode_Solution23.png){border-effect="line" thumbnail="true" width="700"}
 
 Откройте файл Program.cs в проекте `ex0006VSCodeProject03`, приведите к следующему виду и запустите во встроенном терминале.
 
-![Запуск проекта](VSCode_Solution24.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск проекта](VSCode_Solution24.png){border-effect="line" thumbnail="true" width="700"}
 
 Как видите у класса [с операторами верхнего уровня](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/program-structure/top-level-statements) нет пространства имен, вернее оно глобальное.
 Сравните это с выводом приложения из предыдущего проекта. Там имя пространства имен выводилось для класса без операторов
@@ -267,39 +267,125 @@ solution. Посмотрите содержимое этого файла.
 
 В результате вы должны увидеть что-то вроде этого:
 
-![VSCode запущенный из WSL](VSCode_Solution26.png){border-effect="line" thumbnail="true" width="621"}
+![VSCode запущенный из WSL](VSCode_Solution26.png){border-effect="line" thumbnail="true" width="700"}
 
 Практическое задание 1:
 - Раскройте второй проект и запустите встроенный терминал VSCode в каталоге этого проекта
 - Запустите приложение командой `dotnet run`
 - Постарайтесь понять, что это приложение было запущено в Linux (WSL), хотя казалось бы VSCode запущен в Windows 
 
-![Запуск проекта в терминале WSL из VSCode](VSCode_Solution27.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск проекта в терминале WSL из VSCode](VSCode_Solution27.png){border-effect="line" thumbnail="true" width="700"}
 
 Закройте папку и затем закройте удаленное подключение.
 
-![Закрытие папки проекта ](VSCode_Solution28.png){border-effect="line" thumbnail="true" width="621"}
+![Закрытие папки проекта ](VSCode_Solution28.png){border-effect="line" thumbnail="true" width="700"}
 
 ### Запуск WSL из VSCode и переход к каталогу проекта
 Кликните в левом нижнем углу по иконке удалённого подключения и затем выберите ***Подключение к WSL***
 
-![Запуск WSL из VSCode](VSCode_Solution29.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск WSL из VSCode](VSCode_Solution29.png){border-effect="line" thumbnail="true" width="700"}
 
 После этого вам надо открыть папку проекта 
 
-![Открытие папки проекта в VSCode в WSL](VSCode_Solution30.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие папки проекта в VSCode в WSL](VSCode_Solution30.png){border-effect="line" thumbnail="true" width="700"}
 
-![Открытие папки проекта в VSCode в WSL](VSCode_Solution31.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие папки проекта в VSCode в WSL](VSCode_Solution31.png){border-effect="line" thumbnail="true" width="700"}
 
-![Открытие папки проекта в VSCode в WSL](VSCode_Solution32.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие папки проекта в VSCode в WSL](VSCode_Solution32.png){border-effect="line" thumbnail="true" width="700"}
 
 После этого вы должны увидеть что-то вроде этого:
 
-![Открытие папки проекта в VSCode в WSL](VSCode_Solution33.png){border-effect="line" thumbnail="true" width="621"}
+![Открытие папки проекта в VSCode в WSL](VSCode_Solution33.png){border-effect="line" thumbnail="true" width="700"}
 
 Вторым заданием будет перейти в каталог второго проекта и запустить приложение.
 
-![Запуск приложения в VSCode в WSL](VSCode_Solution34.png){border-effect="line" thumbnail="true" width="621"}
+![Запуск приложения в VSCode в WSL](VSCode_Solution34.png){border-effect="line" thumbnail="true" width="700"}
 
 В принципе на скриншоте уже есть подсказка. Да и в самом начале этого раздела она тоже есть. Эти два упражнения уже не
 должны вызвать затруднений. Но если вдруг всё ещё трудно, не переживайте. С практикой все будет получаться.
+
+## Использование Polyglot Notebooks для изучения C#
+Polyglot Notebooks - это плагин для VSCode, который может работать с несколькими языками программирования, включая и C#.
+Чтобы сразу все стало понятнее давайте начнём с практики и установим этот плагин в VSCode. Запускайте VSCode, переходите
+в управление плагинами, в строке поиска наберите **Polyglot** и затем установите этот плагин. 
+
+![Установка плагина Polyglot Notebooks в VSCode в WSL](PolyglotVSCode01.png){border-effect="line" thumbnail="true" width="700"}
+
+После окончания установки нажмите `Ctrl+Shift+p` или выберите в меню **Вид -> Палитра команд...** и наберите в открывшемся
+поле **Poly**, затем выберите **Polyglot Notebooks: создать записную книжку по умолчанию**.
+
+![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode03.png){border-effect="line" thumbnail="true" width="700"}
+
+Если вы запускаете Polyglot Notebooks плагин впервые, то увидите сообщение об установке .NET Interactive.
+
+![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode02.png){border-effect="line" thumbnail="true" width="700"}
+
+Далее надо выбрать формат файла записной книжки. Выберите **.dib** - это формат файлов записной книжки разработанный 
+Микрософт, который отличается от формата интерактивных блокнотов Python использующих расширение **.ipynb**, но Polyglot Notebooks
+может работать и с блокнотами **.ipynb**. Об этом можете прочитать в описании плагина.
+
+![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode04.png){border-effect="line" thumbnail="true" width="700"}
+
+Затем вам надо выбрать язык с которым вы будете работать в создаваемой записной книжке. Выбираем конечно же C#. Но как вы
+видите можно использовать и другие языки программирования.
+
+![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode05.png){border-effect="line" thumbnail="true" width="700"}
+
+Появится уведомление. Нажмите **Don't ask**. На скриншоте я так же добавил пояснения для некоторых основных элементов управления.
+
+![Создание записной книги Polyglot Notebooks в VSCode](PolyglotVSCode06.png){border-effect="line" thumbnail="true" width="700"}
+
+Ну всё! Можно изучать C# в блокноте. Блокноты C# и Python используют концепцию активных ячеек, то есть вы вводите в ячейку оператор
+или несколько и можете выполнить этот блок кода. Это удобно когда нужно поэкспериментировать с небольшими кусками кода и
+посмотреть как он работает, что позволяет избегать процедуры создания решения и проекта C# в Visual Studio или же просто
+проекта C# в командной строке. Иногда это реально удобно.
+
+Как только вы начнете набирать команды, а вернее выражения C# в ячейке блокнота вы увидите подсказки, которые можете использовать.
+
+![Написание кода на C# Polyglot Notebooks в VSCode](PolyglotVSCode07.png){border-effect="line" thumbnail="true" width="700"}
+
+Давайте начнём с классики и поприветствуем мир! Введите код приветствия мира на C#, который должен быть уже вам до боли
+знаком :) А что делать? Повторение - мать учения :)
+
+>Иногда подсветка синтаксиса C# может сразу не заработать в Polyglot Notebook. Это довольно-таки [известный баг](https://github.com/dotnet/interactive/issues/2683)(ошибка).
+>Чтобы пофиксить это наберите в первой ячейке команду `#!about` и выполните код в этой ячейке. Результатом выполнения
+> будет вывод версии .NET Interactive, а так же включение подсветки синтаксиса. Затем создайте ещё одну ячейку и уже 
+> в ней поприветствуйте мир.
+{style = note}
+
+![Написание кода на C# Polyglot Notebooks в VSCode](PolyglotVSCode08.png){border-effect="line" thumbnail="true" width="700"}
+
+Мы допустили ошибку :) Не поставили восклицательный знак приветствуя мир. Это не вежливо, давайте исправим это и запустим
+код в этой ячейке заново.
+
+![Написание кода на C# Polyglot Notebooks в VSCode](PolyglotVSCode09.png){border-effect="line" thumbnail="true" width="700"}
+
+Неправда ли удобно?! Но у Polyglot Notebooks есть несколько ограничений:
+- Вы не можете в них создавать веб сайты, сервисы и полноценные приложения
+- Вы не можете использовать консольные методы получения данных от пользователя типа `ReadLine` или `ReadKey`
+- Вы не можете передавать аргументы в код ячеек, как мы делали это для метода Main в args
+- Вы не можете определять свои собственные пространства имён
+- Нет средств отладки кода
+
+Но это не такие уж и большие ограничения за предоставляемые удобства быстрых экспериментов с относительно простыми кусками
+кода.
+
+Давайте узнаем в какой ОС мы работаем :) Хотя мы и так это знаем. Добавьте ещё одну ячейку, введите код и выполните его.
+
+![Написание кода на C# Polyglot Notebooks в VSCode](PolyglotVSCode10.png){border-effect="line" thumbnail="true" width="700"}
+
+Давайте сохраним нашу записную книжку. Нажмите `Ctrl+Shift+s` и сохраните записную книжку по указанному пути, как показано
+на скриншоте, для этого вам естественно надо будет создать подкаталог.
+
+![Сохранение Polyglot Notebooks в VSCode](PolyglotVSCode11.png){border-effect="line" thumbnail="true" width="700"}
+
+После сохранения закройте записную книжку. 
+
+Заданием к этому разделу будет открыть созданную нами записную книжку в WSL и запустить последнюю ячейку, чтобы увидеть,
+что код был выполнен в WSL Ubuntu. Успехов, падаван! Ты справишься!
+
+>На скриншоте вы видите какой результат вы должны получить, а так же подсказки для выполнения миссии. И да, как напутствие,
+> вам придется еще раз установить плагин Polyglot Notebook, но только уже для WSL.
+{style = note}
+
+![Polyglot Notebooks в VSCode в WSL](PolyglotVSCode12.png){border-effect="line" thumbnail="true" width="700"}
