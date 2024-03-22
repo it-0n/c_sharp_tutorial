@@ -142,10 +142,72 @@ Rider опять задумается на некоторое время
 
 ![Работа в Rider в WSL](RiderWSL09.png){ border-effect="line"  thumbnail="true" width="700"}
 
-И нажмите Download IDE and Connect
+И нажмите Download IDE and Connect (или же сами скачайте дистрибутив, как это сделать читайте чуть ниже)
 
-Вам надо будет дождаться пока Rider скачает IDE Backend и запустит его в WSL. Конечно 1,5Гб впечатляют.
-В VSCode такого не было.
+Вам надо будет дождаться пока Rider скачает IDE Backend (полный дистрибутив Rider для Linux) и запустит его в WSL. 
+Конечно 1,5Гб впечатляют. Но это, ещё разок, полный дистрибутив Rider который будет устанавливаться в WSL.
 
 ![Работа в Rider в WSL](RiderWSL13.png){ border-effect="line"}
 
+Если вы устанете ждать или загрузка зациклиться, то можно сделать проще. Отменить загрузку нажав **Cancel**
+Пойти на [сайт JetBrains](https://www.jetbrains.com/ru-ru/rider/download/#section=linux)
+и скачать дистрибутив Rider самим.
+
+![Работа в Rider в WSL](RiderWSL26.png){ border-effect="line"   thumbnail="true" width="700"}
+
+После того как скачаете дистрибутив, в окне **Choose IDE and Project** жмёте на **Installation options...** и выбираете
+**Upload Installer File**
+
+![Работа в Rider в WSL](RiderWSL27.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Далее выбираете скачанный дистрибутив и путь к файлу решения и жмете Upload IDE and Connect
+
+![Работа в Rider в WSL](RiderWSL15.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Далее начнется загрузка IDE (Rider) на WSL, его установка и запуск
+
+![Работа в Rider в WSL](RiderWSL16.png){ border-effect="line"   thumbnail="true" width="700"}
+
+![Работа в Rider в WSL](RiderWSL17.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Вас попросят согласиться с лицензией. Ставим галку и жмём **Continue**
+
+![Работа в Rider в WSL](RiderWSL18.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Затем, скорее всего вам снова придется подключиться к WSL. Прямо квест какой-то!
+
+![Работа в Rider в WSL](RiderWSL19.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Будет происходить подключение...
+
+![Работа в Rider в WSL](RiderWSL20.png){ border-effect="line"   thumbnail="true" width="700"}
+
+И затем вы должны увидеть установленный в WSL Rider скачанной вами версии. Выбираете ещё раз файл решения
+и жмете **Start IDE and Connect**
+
+![Работа в Rider в WSL](RiderWSL21.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Ещё раз соглашаетесь с лицензией. Когда же это закончиться?! А?!
+
+![Работа в Rider в WSL](RiderWSL22.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Тут жмем **Get Started**
+
+![Работа в Rider в WSL](RiderWSL23.png){ border-effect="line"   thumbnail="true" width="700"}
+
+И, наконец, не веря своему счастью, вы видите запущенный в WSL Rider!!! Аллилуя! Аллах Акбар! Харе Кришна! Слава Богу!
+Мы наконец таки запустили Rider в WSL.
+
+![Работа в Rider в WSL](RiderWSL24.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Дальше всё просто! Выбираем файл в проекте и запускаем его, как вы это уже делали.
+
+![Работа в Rider в WSL](RiderWSL25.png){ border-effect="line"   thumbnail="true" width="700"}
+
+Фсё! Если вы это сделали, то молодец!
+
+Потом уже запускать Rider в WSL будет прощё. 
+
+Ещё раз хочу отметить, что в WSL была установленна полноценная версия Rider. И в принципе вы это так же могли бы
+сделать на удаленной машине, установив Rider или другую IDE JetBrains, по ssh. И потом удаленно работать с кодом
+используя мощности удаленной машины. Это круто. И весь этот квест стоил того чтобы его пройти.
