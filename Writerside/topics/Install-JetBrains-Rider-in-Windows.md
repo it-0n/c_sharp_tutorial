@@ -156,11 +156,11 @@ Rider опять задумается на некоторое время
 ![Работа в Rider в WSL](RiderWSL26.png){ border-effect="line"   thumbnail="true" width="700"}
 
 После того как скачаете дистрибутив, в окне **Choose IDE and Project** жмёте на **Installation options...** и выбираете
-**Upload Installer File**
+**Upload installer file**
 
 ![Работа в Rider в WSL](RiderWSL27.png){ border-effect="line"   thumbnail="true" width="700"}
 
-Далее выбираете скачанный дистрибутив и путь к файлу решения и жмете Upload IDE and Connect
+Далее выбираете скачанный дистрибутив и путь к файлу решения и жмете **Upload IDE and Connect**
 
 ![Работа в Rider в WSL](RiderWSL15.png){ border-effect="line"   thumbnail="true" width="700"}
 
@@ -198,11 +198,11 @@ Rider опять задумается на некоторое время
 И, наконец, не веря своему счастью, вы видите запущенный в WSL Rider!!! Аллилуя! Аллах Акбар! Харе Кришна! Слава Богу!
 Мы наконец таки запустили Rider в WSL.
 
-![Работа в Rider в WSL](RiderWSL24.png){ border-effect="line"   thumbnail="true" width="700"}
+![Работа в Rider в WSL](RiderWSL24.png){ border-effect="line" thumbnail="true" width="700"}
 
 Дальше всё просто! Выбираем файл в проекте и запускаем его, как вы это уже делали.
 
-![Работа в Rider в WSL](RiderWSL25.png){ border-effect="line"   thumbnail="true" width="700"}
+![Работа в Rider в WSL](RiderWSL25.png){ border-effect="line" thumbnail="true" width="700"}
 
 Фсё! Если вы это сделали, то молодец!
 
@@ -211,3 +211,81 @@ Rider опять задумается на некоторое время
 Ещё раз хочу отметить, что в WSL была установленна полноценная версия Rider. И в принципе вы это так же могли бы
 сделать на удаленной машине, установив Rider или другую IDE JetBrains, по ssh. И потом удаленно работать с кодом
 используя мощности удаленной машины. Это круто. И весь этот квест стоил того чтобы его пройти.
+
+## Работа в Rider с проектами удаленно по SSH в Linux
+
+>Внимание! Чтобы проделать это упражнение у вас уже должен быть установлен Ubuntu Server 22.04 на виртуальной или реальной
+>удаленной машине, и так же, на сервере уже должен быть установлен .NET SDK 8.0.
+{style = note}
+
+Пример я буду показывать на виртуальном сервере Ubuntu 22.04. Виртуальная машина имеет IP 192.168.10.22.
+Давайте туда сперва закинем директорию с нашими проектами. Для этого можно использовать встроенный в Windows 10 клиент
+ssh. И так копируем всю структуру каталогов с проектами на удаленную машину. Команду `scp` выполняете на своей машине.
+
+`scp -r it0nCS\ itpro@192.168.10.22:/home/itpro`
+
+После выполнения этой команды в домашнем каталоге пользователя itpro будет создан каталог itOnCS.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote01.png){ border-effect="line"}
+
+Теперь будем устанавливать удаленно Rider. Скачанный дистрибутив у нас уже есть. Запускаем Rider и выбираем
+всё как на скриншоте.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote02.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Далее жмём на шестеренку и создаём новое подключение по SSH.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote03.png){ border-effect="line"  thumbnail="true" width="700"}
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote04.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Вводим данные для подключения, тестируем соединение и сохраняем введенные данные.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote05.png){ border-effect="line"  thumbnail="true" width="700"}
+
+После этого выбираем созданное подключение и жмём **Check Connection and Continue**
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote06.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Если получили такое предупреждение до докиньте памяти на машинку и подключитесь снова. На виртуалке это делается за пару секунд.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote07.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Подключаемся снова. И жмем на плюс, чтобы добавить проект.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote08.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Рядом с плюсом есть значок терминала, если по нему кликнуть то откроется эмулятор терминала и вы подключитесь к удаленной машине.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote09.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Это было справочно-лирическое отступление от темы. И так мы жмём плюс и затем выбираем **Installation options...** и выбираете
+**Upload installer file**. 
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote10.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Выбираем наш скачанный дистрибутив и жмём **Upload IDE and Connect**
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote11.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Странно, но нас ещё раз попросят ввести пароль.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote12.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И затем начнётся загрузка и установка дистрибутива Rider на Ubuntu Server 22.04.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote13.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И затем уже откроется Rider.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote14.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Открываем наш проект и запускаем его, как мы это уже несколько раз делали.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote15.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Если вы всё это смогли проделать, то вы молодец, падаван!
+
+Когда Rider подключен удаленно, то можно наблюдать за загрузкой процессора, памяти и размером дисков на удаленной машине.
+
+![Работа в Rider по SSH удаленно с Linux Ubuntu](RiderLinuxRemote16.png){ border-effect="line"  thumbnail="true" width="700"}
