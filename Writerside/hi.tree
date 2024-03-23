@@ -24,5 +24,6 @@
             <toc-element topic="Install-Visual-Studio-2022.md"/>
             <toc-element topic="Install-JetBrains-Rider-in-Windows.md"/>
         </toc-element>
+        <toc-element topic="How-to-Publish-CSharp-Program-App.md"/>
     </toc-element>
 </instance-profile>
