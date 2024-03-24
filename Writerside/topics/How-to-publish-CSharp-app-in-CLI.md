@@ -2,7 +2,7 @@
 У нас есть замечательное приложение ex0006VSCodeProject02 выводящее информацию об ОС в которой оно запущено.
 Его и будем публиковать
 
-## Публикация автономного приложения C# для Linux x64 средствами CLI
+## Публикация автономного приложения C# для Linux x64
 
 Перейдите в каталог приложения и дайте там команду:
 
@@ -50,4 +50,84 @@
 
 ![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI05.png){ border-effect="line"  thumbnail="true" width="700"}
 
+## Публикация приложения C# зависимого от среды исполнения
+Для публикации этого типа приложения команда очень простая:
 
+`dotnet publish`
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI06.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Файлы нашей программы будут располагаться в каталоге подчеркнутым красной линией.
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI07.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Теперь нам на сервер Ubuntu надо закинуть всю эту папку. Но в данном случае, приложение может быть выполнено и в Windows,
+и в macOS, и в Linux, но при условии, что там установлен .NET Runtime. Давайте убедимся в этом, для чего перейдем в каталог,
+куда было опубликовано наше приложение и запустим его.
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI08.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Как видите наше приложение прекрасно работает, но только потому что на нашей машине установлен .NET SDK, который в себя
+включает и .NET Runtime.
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI09.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Теперь нам на сервер Ubuntu нужно закинуть всю папку publish, так как это все файлы приложения. Для этого дадим команды:
+
+`cd ..`
+
+`scp -r publish\ itpro@192.168.10.22:/home/itpro`
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI10.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Первой командой мы поднимаемся на каталог выше, а второй копируем каталог publish и всё его содержимое на сервер Ubuntu.
+В домашней папке пользователя itpro будет создан каталог publish. Давайте в этом убедимся дав команду `ls` в домашнем
+каталоге пользователя itpro на сервере Ubuntu.
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI11.png){ border-effect="line"}
+
+Давайте перейдем в каталог **publish** на сервере Ubuntu и попробуем запустить программу. Приложение зависящее от платформы
+должно запускаться командой `dotnet <filename.dll>`. Треугольные скобки это общепринятый способ обозначения подставляемого 
+значения. Причем в реальной команде треугольные скобки не используются. То есть реальная команда для запуска нашего приложения
+будет выглядеть так:
+
+`dotnet ex0006VSCodeProject02.dll`
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI12.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Как видите приложение не запустилось, поскольку у нас не установлен .NET Runtime. У нас есть два выхода из этого положения.
+Установить .NET SDK, содержащий .NET Runtime, или установить только .NET Runtime. Если мы не собираемся разрабатывать 
+программы на сервере Ubuntu, а только запускать их, то нам не нужен .NET SDK, а нужен только .NET Runtime. К тому же
+.NET Runtime гораздо меньше по размеру. Поэтому мы установим только его, чтобы запустить нашу программу.
+
+Как видно на скриншоте Ubuntu нам даже подсказывает, что можно сделать, но как я уже сказал .NET SDK нам не нужен. Поэтому
+[установим .NET Runtime](https://learn.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu-2204#install-the-runtime) командой:
+
+`sudo apt install -y dotnet-runtime-8.0`
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI13.png){ border-effect="line"  thumbnail="true" width="700"}
+
+В процессе установки вы можете получить парочку подобных сообщений:
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI14.png){ border-effect="line"  thumbnail="true" width="700"}
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI15.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Это нам сообщают, что надо бы обновить ядро и перезагрузиться. Если вы получили подобные сообщения, то дайте эту парочку 
+команд:
+
+`sudo apt update && sudo apt upgrade -y`
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI16.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И перезагрузите сервер командой `sudo reboot now`
+
+После перезагрузки давайте убедимся что у нас установлен .NET Runtime командой `dotnet --info`.
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI17.png){ border-effect="line"  thumbnail="true" width="700"}
+
+И затем перейдем в каталог publish и запустим нашу программу.
+
+![Публикация приложения C# средствами CLI](PublishCSharpProjectByCLI18.png){ border-effect="line"  thumbnail="true" width="700"}
+
+Как видите всё работает!
