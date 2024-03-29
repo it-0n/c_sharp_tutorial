@@ -12,7 +12,7 @@
 
 Если сказать кратко и просто, то приложения можно опубликовывать с помощью нескольких инструментов:
 - [Средствами командной строки (CLI)](How-to-publish-CSharp-app-in-CLI.md)
-- С помощью Visual Studio
+- [С помощью Visual Studio](How-to-publish-CSharp-App-in-Visual-Studio.md)
 - С помощью JetBrains Rider
 
 Но по существу, все IDE использую первый пункт, то есть CLI. Поэтому начнем именно с CLI.
