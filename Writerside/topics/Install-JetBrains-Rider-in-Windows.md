@@ -33,7 +33,7 @@ JetBrains Rider можно бесплатно использовать 30 дне
 
 ![Установка JetBrains Rider в Windows](InstallJetBrainsWindows06.png){ border-effect="line"}
 
-## Создание решения и консольного проекта в Rider с операторами верхнего уровня
+## Создание решения и консольного проекта в Rider с операторами верхнего уровня {id="how-to-create-solution-in-rider"}
 При первом запуске вам зададут пару вопросов.
 
 Ставим соглашалку и жмем **Continue**.

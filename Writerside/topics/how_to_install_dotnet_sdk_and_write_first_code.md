@@ -4,11 +4,13 @@
 
 - [Как установить .NET SDK в Windows](Install-NET-SDK-8-in-Windows.md)
 - [Как установить .NET SDK в WSL (Windows Subsystem for Linux)](Install-NET-SDK-8-in-WSL.md)
-- Как установить .NET SDK в Linux
-- Как установить .NET SDK в macOS
+- [Как установить .NET SDK в Linux](How-to-install-NET-SDK-in-Linux.md)
+- [Как установить .NET SDK в macOS](Install-NET-SDK-in-macOS.md)
 - [Как в командной строке создать проект C#](how-to-crate-csharp-windows-command-line.md)
 - Как запустить приложение (программу) из созданного проекта в командной строке
-- Как сделать сборку проекта, чтобы его можно было запустить на других компьютерах
+- [Как создать решение и проект C# в Visual Studio](Install-Visual-Studio-2022.md#How-to-crate-solution-in-VisualStudio)
+- [Как создать решение и проект C# в JetBrains Rider](Install-JetBrains-Rider-in-Windows.md#how-to-create-solution-in-rider)
+- [Как сделать сборку проекта, чтобы его можно было запустить на других компьютерах](How-to-Publish-CSharp-Program-App.md)
 
 Конечно же вы можете использовать только те части уроков, которые относятся к вашей ОС. Но я бы рекомендовал установить
 виртуальную машину с теми ОС которых у вас нет и выполнять упражнения на всех трех ОС. Если вы не знаете что такое виртуальная
