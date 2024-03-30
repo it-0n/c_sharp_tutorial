@@ -27,6 +27,7 @@
         <toc-element topic="How-to-Publish-CSharp-Program-App.md">
             <toc-element topic="How-to-publish-CSharp-app-in-CLI.md"/>
             <toc-element topic="How-to-publish-CSharp-App-in-Visual-Studio.md"/>
+            <toc-element topic="How-to-pulish-CSharp-app-in-JetBrains-Rider.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
