@@ -32,7 +32,7 @@
 > установлен Ubuntu Server. Объяснение установки VMware Workstation Pro или VirtualBox, а так же установка в них
 > Ubuntu Server не входит в этот курс. На Youtube полно роликов на эти темы. Например [этот](https://youtu.be/4FBDLQVb8HA?list=PLUSohJYRsRBgsxWXsK-B4bo_4tXjAV7OS) 
 > и [этот](https://youtu.be/cD5Hd7yOKOc?list=PLUSohJYRsRBimkrp_pfDbVY80DQz3csYD). Хотя там описана установка прошлых версий,
-> но принципиально ни чего не поменялось.
+> но принципиально ни чего не поменялось. VMware Workstation Pro платный продукт, но ... VirtualBox бесплатен.
 {style = warning}
 
 У меня сервер Ubuntu 22.04 установлен на виртуальной машине и имеет IP 192.168.10.22.
