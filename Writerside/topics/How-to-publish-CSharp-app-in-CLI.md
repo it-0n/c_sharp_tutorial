@@ -26,6 +26,15 @@
 > машине, к которой вы имеете доступ по ssh. И на этом сервере Ubuntu не должен быть установлен .NET Framework.
 {style = note}
 
+>Внимание! Ещё раз поясняю, что вы НЕ СМОЖЕТЕ выполнить следующую часть упражнения если у вас на компьютере не уставновлена
+> система виртулизации такая как [VMware Workstation Pro](https://www.vmware.com/content/vmware/vmware-published-sites/us/products/workstation-pro/workstation-pro-evaluation.html.html) 
+> или [VirtualBox](https://www.virtualbox.org/wiki/Downloads). Кроме того, в любой из этих сред виртуализации должен быть
+> установлен Ubuntu Server. Объяснение установки VMware Workstation Pro или VirtualBox, а так же установка в них
+> Ubuntu Server не входит в этот курс. На Youtube полно роликов на эти темы. Например [этот](https://youtu.be/4FBDLQVb8HA?list=PLUSohJYRsRBgsxWXsK-B4bo_4tXjAV7OS) 
+> и [этот](https://youtu.be/cD5Hd7yOKOc?list=PLUSohJYRsRBimkrp_pfDbVY80DQz3csYD). Хотя там описана установка прошлых версий,
+> но принципиально ни чего не поменялось. VMware Workstation Pro платный продукт, но ... VirtualBox бесплатен.
+{style = warning}
+
 У меня сервер Ubuntu 22.04 установлен на виртуальной машине и имеет IP 192.168.10.22.
 
 Давайте перейдем в каталог куда был сохранён опубликованный файл и закинем его на сервер Ubuntu. Для этого последовательно
