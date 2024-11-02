@@ -30,4 +30,5 @@
             <toc-element topic="How-to-pulish-CSharp-app-in-JetBrains-Rider.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="BasicsOfCSharp.md"/>
 </instance-profile>
