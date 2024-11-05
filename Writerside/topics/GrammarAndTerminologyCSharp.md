@@ -239,15 +239,15 @@ namespace ex0010_sum_of_two // более явно определили прос
 
 VSCode
 
-![dotnet new console -h](CodeBlocks01.png){ border-effect="line"  thumbnail="true" width="700" }
+![Скрытие и показ блоков кода](CodeBlocks01.png){ border-effect="line"  thumbnail="true" width="700" }
 
 JetBrains Rider
 
-![dotnet new console -h](CodeBlocks02.png){ border-effect="line"  thumbnail="true" width="700" }
+![Скрытие и показ блоков кода](CodeBlocks02.png){ border-effect="line"  thumbnail="true" width="700" }
 
 Visual Studio 2022
 
-![dotnet new console -h](CodeBlocks03.png){ border-effect="line"  thumbnail="true" width="700" }
+![Скрытие и показ блоков кода](CodeBlocks03.png){ border-effect="line"  thumbnail="true" width="700" }
 
 ## Регионы
 
@@ -257,15 +257,15 @@ Visual Studio 2022
 
 Давайте уберем все комментарии из нашего кода и определим блок кода, который хотим сворачивать и разворачивать.
 
-![dotnet new console -h](Region01.png){ border-effect="line"  thumbnail="true" width="700" }
+![Определение региона кода](Region01.png){ border-effect="line"  thumbnail="true" width="700" }
 
 Добавили регион и появилась возможность свернуть указанный кусок кода.
 
-![dotnet new console -h](Region02.png){ border-effect="line"  thumbnail="true" width="700" }
+![Сворачивание региона](Region02.png){ border-effect="line"  thumbnail="true" width="700" }
 
 Свернём регион.
 
-![dotnet new console -h](Region03.png){ border-effect="line"  thumbnail="true" width="700" }
+![Сворачивание региона](Region03.png){ border-effect="line"  thumbnail="true" width="700" }
 
 Как видите после ключевого слова `#region` так же можно использовать комментарий для описания региона.
 
@@ -448,6 +448,7 @@ Visual Studio 2022
 
 - [Модификаторы (Modifiers)](#Modifiers)
     - [Модификаторы доступа (Access Modifiers)](#AccessModifiers)
+- [Ключевые слова инструкций (Statement keywords)](#StatementKeywords)
 
 
 Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к 
@@ -604,3 +605,37 @@ C#, многое для вас будет не понятно, но это не 
 - **struct** имеет `private` доступ по умолчанию, если вложен в другой тип, и допускает уровни `public`, `internal`, и `private`.
 
 > \*Члены интерфейса с модификатором `private` должны включать реализацию по умолчанию, что позволяет ограничить их доступ исключительно для использования внутри интерфейса.
+
+### Ключевые слова инструкций (Statement keywords) {id="StatementKeywords"}
+Как я говорил слово **statement** часто переводят как оператор. Поэтому, данный раздел мог бы называться ключевые
+слова операторов, но на мой взгляд такой перевод слова **statement** в контексте программирования на C#, не корректен.
+Хотя автоматический переводчик на сайте документации Microsoft тоже переводит слово **statement** как оператор.
+
+Давайте посмотрим как на английском выглядят разделы документации на сайте Microsoft:
+
+![ИструкцииОператоры](StatementsAndOperators.png){ border-effect="line"  thumbnail="true" width="700" }
+
+И как эти же разделы выглядят на русском:
+
+![ИструкцииОператоры](StatementsAndOperatorsRus.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Как видите такой перевод только вносит путаницу в понимание сразу нескольких тем. Имейте это в виду.
+
+Но это было так, лирическое отступление от темы связанное с трудностями перевода которые встречаются в русской литературе и
+документации.
+
+В C# [ключевые слова инструкций](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/statement-keywords) ([statement keywords](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/statement-keywords)) 
+— это команды, которые управляют выполнением программы. 
+Они позволяют ветвить, выполнять циклы, обрабатывать ошибки, управлять памятью и синхронизацией и т.д.
+
+| Категория инструкции                                                                                                                                                     | Ключевые слова                                               |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| [Условные инструкции](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/selection-statements)                        | `if`, `switch`                                               |
+| [Циклические инструкции](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/iteration-statements)                    | `do`, `for`, `foreach`, `while`                              |
+| [Инструкции перехода](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/jump-statements)                             | `break`, `continue`, `goto`, `return`                        |
+| [Инструкции обработки исключений](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/exception-handling-statements) | `throw`, `try-catch`, `try-finally`, `try-catch-finally`     |
+| [Инструкции контроля переполнения](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/checked-and-unchecked-statements) | `checked`, `unchecked`                                       |
+| [Фиксированные инструкции](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/fixed-statement)                       | `fixed`                                                      |
+| [Инструкция блокировки](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/lock-statement)                           | `lock`                                                       |
+| [Инструкция yield](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield-statement)                                | `yield`                                                      |
+
