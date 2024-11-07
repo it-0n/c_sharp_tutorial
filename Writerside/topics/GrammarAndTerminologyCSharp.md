@@ -444,7 +444,7 @@ Visual Studio 2022
 | `yield`                    | Используется для возвращения значений по одному в методах, которые возвращают `IEnumerable`. | [yield](https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/yield)                               |
 
 ## Категории ключевых слов
-Чтобы лучше запомнить, а главное понять области применения ключевых слов, все их можно разделить на категории и подкатегории.
+Чтобы лучше запомнить, а главное понять области применения ключевых слов, все их можно разделить на категории и подкатегории:
 
 - [Ключевые слова типов](#TypeKeywords)
 - [Модификаторы (Modifiers)](#Modifiers)
@@ -453,6 +453,7 @@ Visual Studio 2022
 - [Параметры методов (Method Parameters)](#MethodParameters)
 - [Ключевые слова пространства имён (Namespace keywords)](#NamespaceKeywords)
 - [Ключевые слова ограничения обобщений (Generic type constraint keywords)](#GenericTypeConstraintKeywords)
+- [Ключевые слова доступа (Access keywords)](#AccessKeywords)
 
 Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к
 которой вы можете вернуться в любой момент.
@@ -476,14 +477,14 @@ C#, многое для вас будет не понятно, но это не 
 **Ключевые слова [ссылочных типов](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/reference-types)**
 - **[Классы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/class):** `class`
 - **[Интерфейсы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/interface):** `interface`
+- **[Записи](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/record):** `record`
 - **[Встроенные ссылочные типы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types):**
    - **`object`** — [базовый тип для всех объектов](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-object-type)
    - **`string`** — [строковый тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type)
    - **`dynamic`** — [тип, определяемый во время выполнения](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-dynamic-type)
    - **`delegate`** - [делегаты](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-delegate-type)
-- **[Записи](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/record):** `record`
 
-### Модификаторы {id="Modifiers"}
+### Модификаторы (Modifiers) {id="Modifiers"}
 **Модификаторы** в C# — это ключевые слова, используемые для задания дополнительных характеристик типов и их членов. 
 Они определяют, как и где можно использовать и изменять типы, методы, поля, свойства и другие члены. Модификаторы 
 управляют уровнями доступа, возможностью наследования, статическим или экземплярным поведением, а также другими аспектами.
@@ -713,4 +714,15 @@ C#, многое для вас будет не понятно, но это не 
 2. **[new](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/new-constraint)** — требует наличия публичного конструктора без параметров у типа `T`. Например, `where T : new()` позволит создавать экземпляры типа `T` в методе, используя `new T()`.
 
 Эти ограничения помогают контролировать, какие типы можно использовать с обобщениями.
+
+### Ключевые слова доступа (Access keywords) {id="AccessKeywords"}
+В C# ключевые слова **`this`** и **`base`** помогают работать с объектами и иерархией классов:
+
+1. **https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/this** используется для ссылки на текущий экземпляр класса. Оно позволяет:
+    - Указывать член класса, если он скрыт параметром с тем же именем.
+    - Передавать текущий объект в другие методы или для индексации.
+    - Используется в методах расширения, где обозначает параметр-экземпляр.
+
+2. **[base](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/base)** используется для обращения к членам базового класса. Используется для:
+    - Вызова метода или конструктора из базового класса, часто при переопределении методов в производном классе.
 
