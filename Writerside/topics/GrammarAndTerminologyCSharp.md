@@ -454,6 +454,7 @@ Visual Studio 2022
 - [Ключевые слова пространства имён (Namespace keywords)](#NamespaceKeywords)
 - [Ключевые слова ограничения обобщений (Generic type constraint keywords)](#GenericTypeConstraintKeywords)
 - [Ключевые слова доступа (Access keywords)](#AccessKeywords)
+- [Ключевые слова литералы (Literal keywords)](#LiteralKeywords)
 
 Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к
 которой вы можете вернуться в любой момент.
@@ -461,7 +462,7 @@ Visual Studio 2022
 Сперва просто пробегитесь по этой информации, чтобы получить общее представление. Скорее всего, если вы только начали изучать
 C#, многое для вас будет не понятно, но это не страшно. На подкорочке осядет и всегда можете вернуться и почитать ещё раз.
 
-### Ключевые слова типов {id="TypeKeywords"}
+### Ключевые слова типов {id=TypeKeywords}
 Для меня тайна почему на сайте документации Microsoft эти ключевые слова не были выделены в отельную категорию и вообще не 
 упомянуты в разделе ключевых слов, но мы исправим это упущение.
 
@@ -484,7 +485,7 @@ C#, многое для вас будет не понятно, но это не 
    - **`dynamic`** — [тип, определяемый во время выполнения](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-dynamic-type)
    - **`delegate`** - [делегаты](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-delegate-type)
 
-### Модификаторы (Modifiers) {id="Modifiers"}
+### Модификаторы (Modifiers) {id=Modifiers}
 **Модификаторы** в C# — это ключевые слова, используемые для задания дополнительных характеристик типов и их членов. 
 Они определяют, как и где можно использовать и изменять типы, методы, поля, свойства и другие члены. Модификаторы 
 управляют уровнями доступа, возможностью наследования, статическим или экземплярным поведением, а также другими аспектами.
@@ -519,7 +520,7 @@ C#, многое для вас будет не понятно, но это не 
 
 Из этого большого списка ключевых слов модификаторов обычно выделяют группу модификаторов доступа.
 
-**[Модификаторы доступа](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/access-modifiers) ([Access Modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/access-modifiers))** {id="AccessModifiers"}
+**[Модификаторы доступа](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/access-modifiers) ([Access Modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/access-modifiers))** {id=AccessModifiers}
 
 Выделим в отдельный список ключевые слова модификаторы доступа:
 
@@ -633,7 +634,7 @@ C#, многое для вас будет не понятно, но это не 
 
 > \*Члены интерфейса с модификатором `private` должны включать реализацию по умолчанию, что позволяет ограничить их доступ исключительно для использования внутри интерфейса.
 
-### Ключевые слова инструкций (Statement keywords) {id="StatementKeywords"}
+### Ключевые слова инструкций (Statement keywords) {id=StatementKeywords}
 Как я говорил слово **statement** часто переводят как оператор. Поэтому, данный раздел мог бы называться ключевые
 слова операторов, но на мой взгляд такой перевод слова **statement** в контексте программирования на C# не корректен.
 Хотя автоматический переводчик на сайте документации Microsoft тоже переводит слово **statement** как оператор.
@@ -666,7 +667,7 @@ C#, многое для вас будет не понятно, но это не 
 | [Инструкция блокировки](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/lock-statement)                           | `lock`                                                       |
 | [Инструкция yield](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield-statement)                                | `yield`                                                      |
 
-### Параметры методов (Method Parameters) {id="MethodParameters"}
+### Параметры методов (Method Parameters) {id=MethodParameters}
 
 В C# существует несколько ключевых слов для [параметров методов](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/method-parameters) ([Method Parameters](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/method-parameters)):
 
@@ -691,7 +692,7 @@ C#, многое для вас будет не понятно, но это не 
    - Передаёт аргумент по ссылке для чтения, защищая его от изменений.
    - Не допускает создание временной копии, обеспечивая высокую производительность при работе с большими значениями.
 
-### Ключевые слова пространства имён (Namespace keywords) {id="NamespaceKeywords"}
+### Ключевые слова пространства имён (Namespace keywords) {id=NamespaceKeywords}
 
 В языке C# для работы с пространствами имен используются несколько ключевых слов:
 
@@ -705,7 +706,7 @@ C#, многое для вас будет не понятно, но это не 
 
 5. **[extern](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/extern-alias)** — поддерживает использование разных версий библиотек с одинаковыми именами пространств.
 
-### Ключевые слова ограничения обобщений (Generic type constraint keywords) {id="GenericTypeConstraintKeywords"}
+### Ключевые слова ограничения обобщений (Generic type constraint keywords) {id=GenericTypeConstraintKeywords}
 
 В C# для ограничения обобщенных типов используются два ключевых слова:
 
@@ -715,7 +716,7 @@ C#, многое для вас будет не понятно, но это не 
 
 Эти ограничения помогают контролировать, какие типы можно использовать с обобщениями.
 
-### Ключевые слова доступа (Access keywords) {id="AccessKeywords"}
+### Ключевые слова доступа (Access keywords) {id=AccessKeywords}
 В C# ключевые слова **`this`** и **`base`** помогают работать с объектами и иерархией классов:
 
 1. **https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/this** используется для ссылки на текущий экземпляр класса. Оно позволяет:
@@ -726,3 +727,10 @@ C#, многое для вас будет не понятно, но это не 
 2. **[base](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/base)** используется для обращения к членам базового класса. Используется для:
     - Вызова метода или конструктора из базового класса, часто при переопределении методов в производном классе.
 
+### Ключевые слова литералы (Literal keywords) {id=LiteralKeywords}
+
+1. **[null](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/null)** — указывает отсутствие значения у ссылочных типов и значимых типов с поддержкой `null`. Используется, чтобы задать переменную как неинициализированную.
+
+2. **[true](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/bool)** и **false** — логические литералы, обозначающие истину и ложь. Используются в логических выражениях и условиях для управления выполнением кода и связаны с типом `bool`.
+
+3. **[default](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/default)** — возвращает значение по умолчанию для указанного типа и также применяется как "запасной" вариант в `switch`, чтобы обрабатывать все необъявленные варианты.
