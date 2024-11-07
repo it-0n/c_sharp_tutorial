@@ -451,6 +451,7 @@ Visual Studio 2022
 - [Ключевые слова инструкций (Statement keywords)](#StatementKeywords)
 - [Параметры методов (Method Parameters)](#MethodParameters) 
 - [Ключевые слова пространства имён (Namespace keywords)](#NamespaceKeywords)
+- [Ключевые слова ограничения обобщений (Generic type constraint keywords)](#GenericTypeConstraintKeywords)
 
 Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к 
 которой вы можете вернуться в любой момент.
@@ -680,5 +681,13 @@ C#, многое для вас будет не понятно, но это не 
 
 5. **[extern](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/extern-alias)** — поддерживает использование разных версий библиотек с одинаковыми именами пространств.
 
+### Ключевые слова ограничения обобщений (Generic type constraint keywords) {id="GenericTypeConstraintKeywords"}
 
+В C# для ограничения обобщенных типов используются два ключевых слова:
+
+1. **[where](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/where-generic-type-constraint)** — ограничивает параметры обобщений, задавая условия на тип. Например, `where T : class` ограничивает тип `T` классами, а `where T : struct` — только структурами. Можно также указать интерфейсы и другие классы, чтобы ограничить типы.
+
+2. **[new](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/new-constraint)** — требует наличия публичного конструктора без параметров у типа `T`. Например, `where T : new()` позволит создавать экземпляры типа `T` в методе, используя `new T()`.
+
+Эти ограничения помогают контролировать, какие типы можно использовать с обобщениями.
 
