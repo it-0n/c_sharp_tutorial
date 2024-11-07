@@ -464,7 +464,7 @@ C#, многое для вас будет не понятно, но это не 
 Для меня тайна почему на сайте документации Microsoft эти ключевые слова не были выделены в отельную категорию и вообще не 
 упомянуты в разделе ключевых слов, но мы исправим это упущение.
 
-### Ключевые слова типов значений
+**Ключевые слова [типов значений](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/value-types)**
 - **[Целочисленные типы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/integral-numeric-types):** `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`
 - **[Числовые типы с плавающей запятой](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types):** `float`, `double`, `decimal`
 - **[Логический тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/bool):** `bool`
@@ -473,7 +473,7 @@ C#, многое для вас будет не понятно, но это не 
 - **[Структуры](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/integral-numeric-types#native-sized-integers):** `struct`
 - **[Перечисления](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/enum):** `enum`
 
-### Ключевые слова ссылочных типов
+**Ключевые слова [ссылочных типов](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/reference-types)**
 - **[Классы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/class):** `class`
 - **[Интерфейсы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/interface):** `interface`
 - **[Встроенные ссылочные типы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types):**
