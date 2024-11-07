@@ -446,21 +446,44 @@ Visual Studio 2022
 ## Категории ключевых слов
 Чтобы лучше запомнить, а главное понять области применения ключевых слов, все их можно разделить на категории и подкатегории.
 
+- [Ключевые слова типов](#TypeKeywords)
 - [Модификаторы (Modifiers)](#Modifiers)
-    - [Модификаторы доступа (Access Modifiers)](#AccessModifiers)
+   - [Модификаторы доступа (Access Modifiers)](#AccessModifiers)
 - [Ключевые слова инструкций (Statement keywords)](#StatementKeywords)
-- [Параметры методов (Method Parameters)](#MethodParameters) 
+- [Параметры методов (Method Parameters)](#MethodParameters)
 - [Ключевые слова пространства имён (Namespace keywords)](#NamespaceKeywords)
 - [Ключевые слова ограничения обобщений (Generic type constraint keywords)](#GenericTypeConstraintKeywords)
 
-Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к 
+Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к
 которой вы можете вернуться в любой момент.
 
 Сперва просто пробегитесь по этой информации, чтобы получить общее представление. Скорее всего, если вы только начали изучать
 C#, многое для вас будет не понятно, но это не страшно. На подкорочке осядет и всегда можете вернуться и почитать ещё раз.
 
-### Модификаторы {id="Modifiers"}
+### Ключевые слова типов {id="TypeKeywords"}
+Для меня тайна почему на сайте документации Microsoft эти ключевые слова не были выделены в отельную категорию и вообще не 
+упомянуты в разделе ключевых слов, но мы исправим это упущение.
 
+### Ключевые слова типов значений
+- **[Целочисленные типы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/integral-numeric-types):** `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`
+- **[Числовые типы с плавающей запятой](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types):** `float`, `double`, `decimal`
+- **[Логический тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/bool):** `bool`
+- **[Символьный тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/char):** `char`
+- **[Нативные целые типы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/integral-numeric-types#native-sized-integers):** `nint`, `nuint` (зависят от платформы)
+- **[Структуры](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/integral-numeric-types#native-sized-integers):** `struct`
+- **[Перечисления](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/enum):** `enum`
+
+### Ключевые слова ссылочных типов
+- **[Классы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/class):** `class`
+- **[Интерфейсы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/interface):** `interface`
+- **[Встроенные ссылочные типы](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types):**
+   - **`object`** — [базовый тип для всех объектов](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-object-type)
+   - **`string`** — [строковый тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type)
+   - **`dynamic`** — [тип, определяемый во время выполнения](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-dynamic-type)
+   - **`delegate`** - [делегаты](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/reference-types#the-delegate-type)
+- **[Записи](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/record):** `record`
+
+### Модификаторы {id="Modifiers"}
 **Модификаторы** в C# — это ключевые слова, используемые для задания дополнительных характеристик типов и их членов. 
 Они определяют, как и где можно использовать и изменять типы, методы, поля, свойства и другие члены. Модификаторы 
 управляют уровнями доступа, возможностью наследования, статическим или экземплярным поведением, а также другими аспектами.
