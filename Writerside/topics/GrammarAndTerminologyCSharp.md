@@ -455,6 +455,7 @@ Visual Studio 2022
 - [Ключевые слова ограничения обобщений (Generic type constraint keywords)](#GenericTypeConstraintKeywords)
 - [Ключевые слова доступа (Access keywords)](#AccessKeywords)
 - [Ключевые слова литералы (Literal keywords)](#LiteralKeywords)
+- [Контекстные ключевые слова (Contextual Keywords)](#ContextualKeywords)
 
 Опять же, всё это вы запомните автоматически в процессе изучения. Этот раздел тоже относится к справочной информации к
 которой вы можете вернуться в любой момент.
@@ -734,3 +735,47 @@ C#, многое для вас будет не понятно, но это не 
 2. **[true](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/bool)** и **false** — логические литералы, обозначающие истину и ложь. Используются в логических выражениях и условиях для управления выполнением кода и связаны с типом `bool`.
 
 3. **[default](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/default)** — возвращает значение по умолчанию для указанного типа и также применяется как "запасной" вариант в `switch`, чтобы обрабатывать все необъявленные варианты.
+
+### Контекстные ключевые слова (Contextual Keywords) {id=ContextualKeywords}
+
+Контекстные ключевые слова в C# - это слова, имеющие особое значение в определенных контекстах, но не являющиеся зарезервированными. 
+Они могут использоваться как идентификаторы в других случаях.
+
+1. **[add](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/add) / [remove](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/remove)**  
+   Используются для определения методов добавления (`add`) и удаления (`remove`) обработчиков событий в пользовательских реализациях событий.
+
+2. **get / set / init**  
+   Эти ключевые слова определяют аксессоры свойств:
+   - [get](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/get) — возвращает значение свойства.
+   - [set](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/get) — устанавливает значение свойства.
+   - [init](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/init) — устанавливает значение только при инициализации объекта, что добавлено в C# 9.0.
+
+3. **partial ([type](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/partial-type) / [member](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/partial-member))**  
+   Позволяет разделять определение типа (класса, структуры, интерфейса) или метода на несколько файлов, что полезно для крупных классов или генерируемого кода.
+
+4. **[when](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/when)**  
+   Используется в выражениях фильтрации в `catch` и в паттерн-матчинге (`switch`), для указания условий выполнения.
+
+5. **[value](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/value)**  
+   Используется в сеттерах свойств или индексаторов для обозначения присваиваемого значения.
+
+6. **[required](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/value)**  
+   Введено в C# 11. Этот модификатор указывает, что свойство обязательно должно быть инициализировано при создании объекта.  
+   Например:
+
+   ```c#
+   public class Product
+   {
+       public required string Name { get; set; }
+       public decimal Price { get; set; }
+   }
+
+   var product = new Product { Price = 100m }; // Ошибка: Name не инициализировано
+   ```
+
+   - **Особенности**:
+      - Применяется только к свойствам и полям, объявленным как `public`.
+      - Требует наличия конструктора, обеспечивающего инициализацию.
+      - Улучшает безопасность кода, заставляя инициализировать все обязательные поля.
+
+Контекстные ключевые слова предоставляют дополнительные возможности в языке C#, делая код более читаемым и удобным для поддержки.
