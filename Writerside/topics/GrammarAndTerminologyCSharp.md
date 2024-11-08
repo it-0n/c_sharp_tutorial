@@ -779,3 +779,108 @@ C#, многое для вас будет не понятно, но это не 
       - Улучшает безопасность кода, заставляя инициализировать все обязательные поля.
 
 Контекстные ключевые слова предоставляют дополнительные возможности в языке C#, делая код более читаемым и удобным для поддержки.
+
+### Ключевые слова запроса (Query keywords)
+
+Ключевые слова запросов (Query Keywords) в C# предназначены для выполнения операций с данными с использованием LINQ (Language Integrated Query). Они позволяют писать запросы, похожие на SQL, для работы с коллекциями, массивами и другими источниками данных. Рассмотрим их все:
+
+1. **[from](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/from-clause)**
+- **Описание**: Указывает источник данных и объявляет переменную для итерации.
+- **Пример**:
+  ```c#
+  var result = from num in numbers select num;
+  ```
+  Здесь `num` — это текущий элемент коллекции `numbers`.
+
+2. **[where](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/where-clause)**
+- **Описание**: Фильтрует элементы на основе условия.
+- **Пример**:
+  ```c#
+  var result = from num in numbers where num > 10 select num;
+  ```
+  Возвращает элементы больше 10.
+
+3. **[select](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/select-clause)**
+- **Описание**: Указывает, какие элементы будут выбраны в результате запроса.
+- **Пример**:
+  ```c#
+  var result = from num in numbers select num * 2;
+  ```
+  Возвращает каждый элемент, умноженный на 2.
+
+4. **[group by](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/group-clause)**
+- **Описание**: Группирует элементы по указанному критерию.
+- **Пример**:
+  ```c#
+  var result = from p in products group p by p.CategoryId;
+  ```
+  Группирует товары по идентификатору категории.
+
+5. **[into](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/into)**
+- **Описание**: Используется для создания промежуточного результата, часто после группировки.
+- **Пример**:
+  ```c#
+  var result = from p in products
+               group p by p.CategoryId into g
+               select new { Category = g.Key, Count = g.Count() };
+  ```
+  Создает промежуточную коллекцию с количеством товаров в каждой категории.
+
+6. **[orderby](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/orderby-clause)**
+- **Описание**: Сортирует результаты запроса.
+- **Пример**:
+  ```c#
+  var result = from num in numbers orderby num ascending select num;
+  ```
+  Сортирует по возрастанию.
+
+7. **[join](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/join-clause)** и **[on equals](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/on)**
+- **Описание**: Выполняют внутреннее соединение двух коллекций.
+- **Пример**:
+  ```c#
+  var result = from p in products
+               join c in categories on p.CategoryId equals c.Id
+               select new { p.Name, c.CategoryName };
+  ```
+  Объединяет коллекции `products` и `categories` по `CategoryId`.
+
+8. **[let](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/let-clause)**
+- **Описание**: Вводит переменную для хранения промежуточного значения.
+- **Пример**:
+  ```c#
+  var result = from num in numbers
+               let square = num * num
+               where square > 100
+               select square;
+  ```
+  Вычисляет квадрат числа и фильтрует значения больше 100.
+
+9. **[in](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/in)**
+- **Описание**: Используется в начале запроса для определения источника данных.
+- **Пример**:
+  ```c#
+  var result = from number in numbers select number;
+  ```
+
+10. **[on](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/on)** и **[equals](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/equals)**
+- **Описание**: Используются вместе в выражении `join` для указания условий соединения двух коллекций.
+- **Пример**:
+  ```c#
+  var result = from p in products
+               join c in categories on p.CategoryId equals c.Id
+               select new { p.Name, c.CategoryName };
+  ```
+
+11. **[ascending](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/ascending)** и **[descending](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/descending)**
+- **Описание**: Указывают направление сортировки. По умолчанию используется **ascending**.  Сортирует по убыванию.
+- **Пример**:
+  ```c#
+  var result = from num in numbers orderby num descending select num;
+  ```
+
+12. **[by](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/by)**
+- **Описание**: Используется в выражении `group by` для указания критерия группировки.
+- **Пример**:
+  ```c#
+  var result = from p in products group p by p.CategoryId;
+  ```
