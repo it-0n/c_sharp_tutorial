@@ -49,7 +49,7 @@ class Program
 ```
 Создайте папку episode02. Затем в ней создайте проект ex0010_sum_of_two без операторов верхнего уровня. 
 
-![dotnet new console -h](SumOfTowNumbers01.png){ border-effect="line" }
+![Структура каталогов](SumOfTowNumbers01.png){ border-effect="line" }
 
 Запустите VSCode из папки episode02, откройте проект ex0010_sum_of_two и введите приведенный выше код в файл Program.cs.
 Практика это всегда полезно. Если забыли как это делается, вернитесь к первому эпизоду.
@@ -57,11 +57,11 @@ class Program
 >Если вы запустите VSCode из папки episode02, то VSCode сам создаст файл решения в который добавит проект ex0010_sum_of_two.
 {style="note"}
 
-![dotnet new console -h](SumOfTowNumbers03.png){ border-effect="line" }
+![Файл решения](SumOfTowNumbers03.png){ border-effect="line" }
 
 Запустите программу. Пример запуска:
 
-![dotnet new console -h](SumOfTowNumbers02.png){ border-effect="line" }
+![Результат работы программы](SumOfTowNumbers02.png){ border-effect="line" }
 
 Возможно пока этот пример вам не покажется сильно простым, но сложность здесь может представлять только блок преобразования строки в число.
 Как раз мы плавно подходим к понятию блоков кода.
@@ -885,3 +885,60 @@ C#, многое для вас будет не понятно, но это не 
   ```c#
   var result = from p in products group p by p.CategoryId;
   ```
+## Литерылы
+Литералы в C# — это значения, которые непосредственно указаны в коде. В C# есть несколько типов литералов:
+
+1. **Целочисленные литералы** — представляют целые числа (`10`, `0b1010` — бинарный, `0x1A` — шестнадцатеричный).
+2. **Вещественные литералы** — числа с плавающей точкой (`3.14`, `2.71F`). Также доступны бинарные вещественные литералы (например, `0b1.1p1`).
+3. **Символьные литералы** — один символ в одинарных кавычках (`'A'`).
+4. **Строковые литералы** — строки в двойных кавычках (`"Hello"`).
+5. **Логические литералы** — значения `true` и `false`.
+6. **Null-литерал** — значение `null`, обозначающее отсутствие объекта.
+
+Для примера создадим простой консольный проект ex0011_literals в папке episode02. В Program.cs введите следующий код:
+
+```c#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Целочисленные литералы
+        int decimalLiteral = 10;           // Десятичный литерал
+        int hexLiteral = 0x1A;             // Шестнадцатеричный литерал
+        int binaryLiteral = 0b1010;        // Бинарный литерал
+
+        // Вещественные литералы
+        double doubleLiteral = 3.14;       // Десятичное значение
+        float floatLiteral = 2.71F;        // С суффиксом 'F' для типа float
+
+        // Символьные литералы
+        char charLiteral = 'A';            // Символ в одинарных кавычках
+
+        // Строковые литералы
+        string stringLiteral = "Hello, C#!"; // Строка в двойных кавычках
+
+        // Логические литералы
+        bool trueLiteral = true;           // Логическое значение true
+        bool falseLiteral = false;         // Логическое значение false
+
+        // Null-литерал
+        object nullLiteral = null;         // Значение null
+
+        // Вывод всех литералов
+        Console.WriteLine($"Целочисленные литералы: {decimalLiteral}, {hexLiteral}, {binaryLiteral}");
+        Console.WriteLine($"Вещественные литералы: {doubleLiteral}, {floatLiteral}");
+        Console.WriteLine($"Символьный литерал: {charLiteral}");
+        Console.WriteLine($"Строковый литерал: {stringLiteral}");
+        Console.WriteLine($"Логические литералы: {trueLiteral}, {falseLiteral}");
+        Console.WriteLine($"Null-литерал: {nullLiteral}");
+    }
+}
+```
+Запустив программу на выполнение вы увидите примерно следующее:
+
+![Структура каталогов](Literals.png){ border-effect="line" }
+
+Выполнение последне инструкций выдаст предупреждение, поскольку код вообще не любит налетать на null, но об этом вы 
+узнаете чуть позже. И не раз столкнетесь в своей практике программирования.
