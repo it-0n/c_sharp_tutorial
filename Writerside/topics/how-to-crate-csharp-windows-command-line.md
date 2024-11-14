@@ -82,7 +82,7 @@ ex0001, ex0002 и т.д.
 Вы так же можете [создать сами шаблон приложения](https://learn.microsoft.com/ru-ru/dotnet/core/tutorials/cli-templates-create-project-template)
 или скачать готовые, разработанные другими людьми, [например эти](https://github.com/Dotnet-Boxed/Templates).
 
-Посмотреть доступные шаблоны приложений идущие в стандартной поставке .NET SDK можно командой:
+{id=template_list}Посмотреть доступные шаблоны приложений идущие в стандартной поставке .NET SDK можно командой:
 
 `dotnet new list`
 
