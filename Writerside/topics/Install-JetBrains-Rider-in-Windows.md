@@ -78,7 +78,7 @@ JetBrains Rider c 24 октября 2024 года [стал бесплатным
 
 ![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows10.png){ border-effect="line"}
 
-Rider создаст решение и проект и вы должны увидеть что-то вроде этого:
+{id="rider_run"} Rider создаст решение и проект и вы должны увидеть что-то вроде этого:
 
 ![Первое приложение в JetBrains Rider в Windows](FirstProjectJetBrainsWindows11.png){ border-effect="line"  thumbnail="true" width="700"}
 
