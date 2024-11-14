@@ -32,5 +32,6 @@
     </toc-element>
     <toc-element topic="BasicsOfCSharp.md">
         <toc-element topic="GrammarAndTerminologyCSharp.md"/>
+        <toc-element topic="Csharp-project-structure.md"/>
     </toc-element>
 </instance-profile>
