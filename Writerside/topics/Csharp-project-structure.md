@@ -120,7 +120,16 @@ Solution и выберем File system.
 </Project>
 ```
 
+Файл проекта **ex0012_default_namespaces.csproj** - это файл в формате XML.
+
+>XML (eXtensible Markup Language) — это текстовый формат для хранения данных, который легко читается как человеком
+>, так и компьютером. Если говорить простыми словами, XML — это способ структурировать информацию в виде текста с
+> использованием тегов, похожих на HTML, но с возможностью создавать свои собственные теги.
+{style="note"}
+
 ![Удаляем не нужные global using](NameSpaces07.png){ border-effect="line"  thumbnail="true" width="700" }
+
+С помощью тегов `Using Remove` в группе `ItemGroup` мы удалили не нужные нам неявные глобальные импорты.
 
 Сохраните файл проекта, и посмотрите как изменился файл **ex0012_default_namespaces.GlobalUsings.g.cs**:
 
@@ -131,4 +140,6 @@ Solution и выберем File system.
 ![Удаляем не нужные global using](NameSpaces09.png){ border-effect="line"  thumbnail="true" width="700" }
 
 Запустите программу и убедитесь что она работает. Как это сделать можете вспомнить [тут](Install-JetBrains-Rider-in-Windows.md#rider_run).
+
+
 
