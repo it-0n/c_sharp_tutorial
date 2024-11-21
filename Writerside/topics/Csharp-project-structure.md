@@ -455,4 +455,79 @@ dotnet new --list | find "Tiny"
 В принципе ничто нам не мешает сократить эту инструкцию вообще допустим до WL или wl, чтобы даже в верхний регистр не
 приключаться. Да программисты ленивые люди. Возможно мы это сделаем в будущем.
 
+Теперь давайте изменим нашу программу таким образом:
 
+```C#
+using System;
+using System.Reflection;
+using static System.Runtime.InteropServices.RuntimeInformation;
+using Env = System.Environment;
+
+namespace ex0014_global_using
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            WriteLine($"Операционная система: {OSDescription}");
+            WriteLine($"Текущая директория: {Env.CurrentDirectory}");
+            WriteLine("Имя класса: \u001b[38;5;214m{0}\u001b[0m", typeof(Program).Name);
+            WriteLine("Имя пространства имён класса: \u001b[38;5;214m{0}\u001b[0m", typeof(Program).Namespace);
+            WriteLine("Полное имя класса: \u001b[38;5;214m{0}\u001b[0m", typeof(Program).FullName);
+            WriteLine($"Имя компьютера {Env.MachineName}");     
+            Write($"Текущий метод: ");
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine($"{System.Reflection.MethodBase.GetCurrentMethod()?.Name}");
+            ResetColor();
+            var method = MethodBase.GetCurrentMethod();
+            Write($"Полное имя текущего метода: ");
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine($"{method?.DeclaringType?.FullName}.{method?.Name}");
+            ResetColor();
+        }
+    }
+}
+```
+
+И запустим её:
+
+![Создание консольного приложения tinyconsole](NameSpaces31.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Обратите внимание, что у нас появилось пространство имен, которое мы сами и объявили при создании приложения. Шаблон
+tinyconsole создал пространство имен для нашей программы по имени приложения которое мы задали. Ни что, не мешает нам поменять
+имя пространства имен на другое.
+
+В первых четырёх строках программы мы делаем простой (не глобальный) импорт пространств имен, которые необходимы для работы
+нашей программы. Но так как это не глобальный импорт он будет работать только для классов объявленных в текущем файле.
+
+Особенностью шаблона tinyconsole, является то что вам надо явно подключать все пространства имен, которые необходимы вашей
+программе. Это очень полезно для изучения языка, так как вы будете хорошо знать из каких пространств имен берутся те или 
+иные инструкции.
+
+Как задание попробуйте по очереди закомментировать каждую из строк с инструкцией `using` и посмотреть что будет.
+
+Например:
+
+![Создание консольного приложения tinyconsole](NameSpaces32.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Если мы отключим импорт пространства имён `System`, то VSCode сразу же подсветит нам ошибки, так как эти инструкции станут
+ему не известными и естественно программа не соберется и не запустится.
+
+![Создание консольного приложения tinyconsole](NameSpaces33.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Затем уберем комментарий с этой строки и посмотрим внимательно на строку 20:
+
+![Создание консольного приложения tinyconsole](NameSpaces34.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Можно увидеть что часть полного имени метода `GetCurrentMethod()` затемнена. Это VSCode нам подсказывает, что это имя 
+можно сократить, поскольку у нас во второй строке есть импорт позволяющий это сделать. Наведите курсор на эту часть и 
+увидите подсказку.
+
+![Создание консольного приложения tinyconsole](NameSpaces35.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Давайте сделаем это:
+
+![Создание консольного приложения tinyconsole](NameSpaces36.png){ border-effect="line"  thumbnail="true" width="700" }
+
+И сразу же на этом скриншоте показано, как нам удалось сократить в 12 строке имя оператора для вывода названия ОС. Сравните 
+это с программой ex0013.
