@@ -29,7 +29,7 @@
 
 ![Публикация приложения C# в Visual Studio](PublishByVisualStudio05.png){ border-effect="line"  thumbnail="true" width="700"}
 
-Жмём **Close** без вариантов :)
+Жмём **Close** без вариантов 😊
 
 ![Публикация приложения C# в Visual Studio](PublishByVisualStudio06.png){ border-effect="line"  thumbnail="true" width="700"}
 
