@@ -3937,7 +3937,7 @@ class Program
     - Используются команды `Console.ForegroundColor` для изменения цвета текста в консоли:
         - Красное сердце: `ConsoleColor.Red`.
         - Желтый смайлик: `ConsoleColor.DarkYellow`.
-        - Оранжевая Омкара: `ConsoleColor.DarkMagenta`.
+        - Фиолетовая Омкара: `ConsoleColor.DarkMagenta`.
 3. **Символы Unicode**:
     - Символ Омкары: `'\u0950'` — символ из санскрита.
     - Сердечко: `'\u2764'` — классический символ сердечка.
