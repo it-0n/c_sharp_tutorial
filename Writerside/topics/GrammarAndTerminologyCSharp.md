@@ -1222,8 +1222,9 @@ string result = text + number.ToString(); // Требуется явное пр�
 - Типы с плавающей запятой (`float`, `double`, `decimal`)
 - Булев тип (`bool`)
 - Символьный тип (`char`)
-- Структуры (`struct`)
 - Перечисления (`enum`)
+- Структуры (`struct`)
+- Кортежи (нет ключевого слова для данного типа)
 
 ### Ссылочные типы (Reference types)
 **Ссылочные типы** хранят ссылку на объект в памяти, а не само значение. Они размещаются в куче, что требует работы
@@ -1285,35 +1286,28 @@ _GC - Garbage Collector (Сборщик мусора)_
    | `double`  | ±5.0 x 10^-324 до ±1.7 x 10^308            | 64           | `System.Double` |
    | `decimal` | ±1.0 x 10^-28 до ±7.9 x 10^28 (высокая точность) | 128       | `System.Decimal`|
 
-3. **[Встроенные числовые преобразования](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/numeric-conversions) ([Built-in numeric conversions](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/numeric-conversions))**:
-    - C# поддерживает явные и неявные преобразования числовых типов. Например, преобразование `int` в `float` происходит автоматически, а вот преобразование `double` в `int` требует явного указания.
-
-4. **[Булев тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/bool) ([bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool))**:
+3. **[Булев тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/bool) ([bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool))**:
     - Используется для представления логических значений: `true` или `false`.
     - Размер: 1 байт.
     - Тип .NET: `System.Boolean`.
 
-5. **[Символьный тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/char) ([char](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char))**:
+4. **[Символьный тип](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/char) ([char](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char))**:
     - Представляет отдельный символ Unicode UTF-16
     - Размер: 2 байта.
     - Тип .NET: `System.Char`.
 
-6. **[Перечисления](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/enum) ([enum](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum))**:
+5. **[Перечисления](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/enum) ([enum](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum))**:
     - Используются для создания набора именованных констант, связанных с целочисленными значениями.
     - Тип .NET: `System.Enum`.
 
-7. **[Структуры](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/struct) ([struct](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct))** и **[ref структуры](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/ref-struct) ([ref struct](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/ref-struct))**:
+6. **[Структуры](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/struct) ([struct](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct))** и **[ref структуры](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/ref-struct) ([ref struct](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/ref-struct))**:
     - Структуры — это пользовательские типы значений, которые можно использовать для объединения нескольких полей данных.
     - `ref struct` — это структура, которая ограничена для использования в стеке, избегая выделения в куче.
     - Тип .NET: `System.ValueType`.
 
-8. **[Кортежи](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/value-tuples) ([tuples](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples))**:
+7. **[Кортежи](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/value-tuples) ([tuples](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples))**:
     - Позволяют объединить несколько значений разных типов в одну структуру, например `(int, string)`.
     - Тип .NET: `System.ValueTuple`.
-
-9. **[Типы значений, допускающие значение NULL](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/nullable-value-types) ([Nullable value types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types))**:
-    - Позволяют значимым типам принимать значение `null`.
-    - Обозначаются знаком `?`, например `int?`.
 
 ### Описание ссылочных типов:
 
