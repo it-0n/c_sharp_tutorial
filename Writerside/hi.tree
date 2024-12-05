@@ -33,6 +33,8 @@
     <toc-element topic="BasicsOfCSharp.md">
         <toc-element topic="GrammarAndTerminologyCSharp.md"/>
         <toc-element topic="Csharp-project-structure.md"/>
-        <toc-element topic="var-in-csharp.md"/>
+        <toc-element topic="var-in-csharp.md">
+            <toc-element topic="value-vasr-in-csharp.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>
