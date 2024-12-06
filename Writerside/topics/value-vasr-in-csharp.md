@@ -4184,3 +4184,428 @@ class Program
 Структура в C# — это тип данных, который позволяет организовывать связанные значения и методы. Она по умолчанию изменяема, 
 но часто её делают неизменяемой для предсказуемости. Структуры полезны, когда нужно создать небольшой и эффективный 
 контейнер данных, который копируется при передаче.
+
+## Операции над структурами
+
+>Если вы только приступили к изучению C# многое из того что описано ниже, возможно, вам будет не понятно. Когда мы будем
+>изучать классы, то вы во всём этом разберётесь.
+{style="note"}
+
+Структуры (`struct`) в C# поддерживают определённые операции, которые можно выполнять с ними. 
+Вот полный перечень таких операций:
+
+### 1. Присваивание {id="1_3"}
+
+Копирование значений одной структуры в другую:
+
+```c#
+struct Point
+{
+    public int X;
+    public int Y;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p1 = new Point { X = 5, Y = 10 };
+        Point p2 = p1; // Копируются значения (а не ссылка)
+
+        p2.X = 15; // Изменение p2 не затрагивает p1
+        Console.WriteLine($"p1: X = {p1.X}, Y = {p1.Y}");
+        Console.WriteLine($"p2: X = {p2.X}, Y = {p2.Y}");
+    }
+}
+```
+
+### 2. Полная инициализация {id="2_3"}
+
+Можно инициализировать структуру через конструктор или используя инициализаторы полей.
+
+```c#
+struct Rectangle
+{
+    public double Width;
+    public double Height;
+
+    public Rectangle(double width, double height)
+    {
+        Width = width;
+        Height = height;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Rectangle rect1 = new Rectangle(10, 5); // Через конструктор
+        Rectangle rect2 = new Rectangle { Width = 15, Height = 20 }; // Через инициализатор
+    }
+}
+```
+
+### 3. Доступ к полям и методам {id="3_6"}
+
+Доступ к полям структуры или вызов её методов.
+
+```c#
+struct Circle
+{
+    public double Radius;
+
+    public double CalculateArea()
+    {
+        return Math.PI * Radius * Radius;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Circle circle = new Circle { Radius = 5 };
+        Console.WriteLine($"Площадь круга: {circle.CalculateArea()}");
+    }
+}
+```
+
+### 4. Использование в качестве параметров метода {id="4_4"}
+
+Структуры можно передавать в методы **по значению** или **по ссылке**.
+
+- **По значению** (создаётся копия):
+
+  ```c#
+  struct Point
+  {
+      public int X;
+      public int Y;
+  }
+
+  class Program
+  {
+      static void UpdatePoint(Point p)
+      {
+          p.X = 100; // Изменения не затронут оригинал
+      }
+
+      static void Main()
+      {
+          Point p = new Point { X = 1, Y = 2 };
+          UpdatePoint(p);
+          Console.WriteLine($"p.X после вызова метода: {p.X}"); // Выведет 1
+      }
+  }
+  ```
+
+- **По ссылке** (используется ключевое слово `ref`):
+
+  ```c#
+  struct Point
+  {
+      public int X;
+      public int Y;
+  }
+
+  class Program
+  {
+      static void UpdatePoint(ref Point p)
+      {
+          p.X = 100; // Оригинал изменится
+      }
+
+      static void Main()
+      {
+          Point p = new Point { X = 1, Y = 2 };
+          UpdatePoint(ref p);
+          Console.WriteLine($"p.X после вызова метода: {p.X}"); // Выведет 100
+      }
+  }
+  ```
+
+### 5. Сравнение (`==`, `!=`) {id="5_4"}
+
+По умолчанию структуры **не поддерживают операторы сравнения**. Если вы попытаетесь сравнить две структуры, 
+компилятор выдаст ошибку. Однако вы можете перегрузить операторы `==` и `!=` для собственной логики сравнения.
+
+```c#
+struct Point
+{
+    public int X;
+    public int Y;
+
+    public static bool operator ==(Point a, Point b)
+    {
+        return a.X == b.X && a.Y == b.Y;
+    }
+
+    public static bool operator !=(Point a, Point b)
+    {
+        return !(a == b);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p1 = new Point { X = 1, Y = 2 };
+        Point p2 = new Point { X = 1, Y = 2 };
+        Point p3 = new Point { X = 3, Y = 4 };
+
+        Console.WriteLine(p1 == p2); // true
+        Console.WriteLine(p1 != p3); // true
+    }
+}
+```
+
+### 6. Перегрузка операторов {id="6_4"}
+
+Кроме сравнения, можно перегружать операторы для других действий, например, сложения.
+
+```c#
+struct Vector
+{
+    public int X;
+    public int Y;
+
+    public static Vector operator +(Vector a, Vector b)
+    {
+        return new Vector { X = a.X + b.X, Y = a.Y + b.Y };
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Vector v1 = new Vector { X = 2, Y = 3 };
+        Vector v2 = new Vector { X = 4, Y = 5 };
+
+        Vector result = v1 + v2;
+        Console.WriteLine($"Результат сложения: X = {result.X}, Y = {result.Y}");
+    }
+}
+```
+
+### 7. Преобразование типов {id="7_4"}
+
+Можно определить явное или неявное преобразование структур.
+
+```c#
+struct Point
+{
+    public int X;
+    public int Y;
+
+    public static explicit operator string(Point p)
+    {
+        return $"({p.X}, {p.Y})";
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p = new Point { X = 5, Y = 10 };
+        string str = (string)p; // Явное преобразование
+        Console.WriteLine(str); // "(5, 10)"
+    }
+}
+```
+
+### 8. Использование со стандартными методами `Equals` и `GetHashCode`
+
+Каждая структура может сравниваться с помощью метода `Equals`.
+
+```c#
+struct Point
+{
+    public int X;
+    public int Y;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p1 = new Point { X = 1, Y = 2 };
+        Point p2 = new Point { X = 1, Y = 2 };
+
+        Console.WriteLine(p1.Equals(p2)); // true
+    }
+}
+```
+
+### 9. Деструктуризация (с версии C# 7.0)
+
+Вы можете разбивать значения структуры на отдельные переменные.
+
+```c#
+struct Point
+{
+    public int X;
+    public int Y;
+
+    public void Deconstruct(out int x, out int y)
+    {
+        x = X;
+        y = Y;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p = new Point { X = 10, Y = 20 };
+        var (x, y) = p; // Деструктуризация
+        Console.WriteLine($"x = {x}, y = {y}");
+    }
+}
+```
+
+### 10. Реализация интерфейсов {id="10_1"}
+
+Структуры могут реализовывать интерфейсы, что позволяет им работать с абстракциями. При этом важно помнить:
+
+- Если метод интерфейса вызывается через интерфейсную ссылку, структура будет **боксироваться** (упаковываться в объект в куче).
+- Чтобы избежать боксирования, метод интерфейса должен вызываться напрямую через экземпляр структуры.
+
+#### Пример: Реализация интерфейса
+
+```c#
+interface IShape
+{
+    double CalculateArea();
+}
+
+struct Rectangle : IShape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public double CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Rectangle rect = new Rectangle { Width = 10, Height = 5 };
+
+        // Прямой вызов метода — без боксирования
+        Console.WriteLine($"Площадь (без боксирования): {rect.CalculateArea()}");
+
+        // Вызов через интерфейс — структура боксируется
+        IShape shape = rect;
+        Console.WriteLine($"Площадь (с боксированием): {shape.CalculateArea()}");
+    }
+}
+```
+
+#### Пояснения:
+1. **Боксирование**: Когда структура приводится к интерфейсному типу, она упаковывается в объект в куче. Это снижает производительность.
+2. **Избежание боксирования**: Для высокой производительности старайтесь вызывать методы интерфейса напрямую через экземпляр структуры.
+
+### 10.1. Множественная реализация интерфейсов
+
+Структура может реализовать несколько интерфейсов одновременно.
+
+```c#
+interface IPerimeter
+{
+    double CalculatePerimeter();
+}
+
+interface IShape
+{
+    double CalculateArea();
+}
+
+struct Rectangle : IPerimeter, IShape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public double CalculateArea() => Width * Height;
+
+    public double CalculatePerimeter() => 2 * (Width + Height);
+}
+
+class Program
+{
+    static void Main()
+    {
+        Rectangle rect = new Rectangle { Width = 10, Height = 5 };
+
+        Console.WriteLine($"Площадь: {rect.CalculateArea()}");
+        Console.WriteLine($"Периметр: {rect.CalculatePerimeter()}");
+    }
+}
+```
+
+### 10.2. Интерфейсы с методами по умолчанию (C# 8.0 и выше)
+
+С версии C# 8.0 интерфейсы могут содержать реализации методов по умолчанию. Структуры могут использовать такие 
+интерфейсы, при этом можно переопределить методы.
+
+```c#
+interface IShape
+{
+    double CalculateArea();
+
+    // Метод по умолчанию
+    void PrintInfo()
+    {
+        Console.WriteLine("Это фигура.");
+    }
+}
+
+struct Rectangle : IShape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public double CalculateArea() => Width * Height;
+
+    // Переопределение метода
+    public void PrintInfo()
+    {
+        Console.WriteLine($"Это прямоугольник. Ширина: {Width}, Высота: {Height}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Rectangle rect = new Rectangle { Width = 10, Height = 5 };
+        rect.PrintInfo(); // Используется переопределённый метод
+    }
+}
+```
+
+Работа с интерфейсами делает структуры гибкими и мощными для создания модульного кода.
+
+### **Итог:**
+
+Операции над структурами в C# включают:
+1. Присваивание.
+2. Полную инициализацию.
+3. Доступ к полям и методам.
+4. Использование в качестве параметров (по значению и по ссылке).
+5. Сравнение (`==`, `!=`) с возможностью перегрузки.
+6. Перегрузку операторов.
+7. Преобразование типов.
+8. Использование стандартных методов `Equals` и `GetHashCode`.
+9. Деструктуризацию.
+10. Реализуют интерфейсы.
+
+Эти операции делают структуры мощным инструментом для создания лёгких и производительных контейнеров данных.
