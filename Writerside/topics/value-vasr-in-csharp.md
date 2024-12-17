@@ -5116,3 +5116,125 @@ class Program
 Температура: 22,5°C
 ```
 
+## Операции над типами значений допускающих NULL {id="null_1"}
+### Общие свойства
+1. **Nullable value types (`T?`) поддерживают все те же операции, что и их не-nullable двойники.** Однако результат зависит от значений операндов:
+    - Если все операнды имеют значения, операция выполняется как обычно.
+    - Если хотя бы один из операндов равен `null`, то результат также будет `null` (для большинства операций).
+    - Если хотя бы один из операндов nullable, то и результат тоже будет nullable.
+
+2. **Сравнения**:
+    - Операции `==` и `!=` возвращают `true` или `false`, даже если один из операндов равен `null`.
+    - Операции `>`, `<`, `>=`, `<=` возвращают `false`, если хотя бы один из операндов равен `null`.
+
+3. **Арифметические операции**:
+    - Если хотя бы один из операндов равен `null`, то результат будет `null`.
+    - Операции выполняются только в случае, если оба операнда имеют значение.
+    - Если хотя бы один из операндов nullable, то и результат тоже будет nullable.
+
+4. **Оператор `??` (null-coalescing)**:
+    - Позволяет задать значение по умолчанию, если переменная равна `null`.
+
+5. **Свойства**:
+    - `HasValue`: возвращает `true`, если переменная содержит значение.
+    - `Value`: возвращает значение переменной, если оно не равно `null`.
+
+6. **Метод `GetValueOrDefault()`**:
+    - Возвращает значение переменной или значение по умолчанию для базового типа.
+
+Практика, падаван.
+
+Создай консольное приложение `ex0037_null_val_var_operations` при помощи шаблона `tinyconsole` в папке
+`episode02` и добавь его в файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведите `Program.cs` к следующему виду:
+
+```c#
+class Program
+{
+    static void Main()
+    {
+        // Создаем nullable value types
+        int? nullableInt1 = 42;
+        int? nullableInt2 = null;
+
+        // Пример: свойства HasValue и Value
+        WriteLine($"nullableInt1.HasValue: {nullableInt1.HasValue}"); // True
+        WriteLine($"nullableInt2.HasValue: {nullableInt2.HasValue}"); // False
+        WriteLine($"nullableInt1.Value: {nullableInt1.Value}"); // 42
+
+        // Оператор ?? (null-coalescing)
+        int defaultValue = nullableInt2 ?? -1; // -1, так как nullableInt2 == null
+        WriteLine($"nullableInt2 ?? -1: {defaultValue}");
+
+        // Арифметические операции
+        int? sum = nullableInt1 + nullableInt2; // null
+        WriteLine($"Sum: {sum ?? 0}"); // Если sum == null, выводим 0
+
+        int? multiply = nullableInt1 * 2; // 42 * 2 = 84
+        WriteLine($"Multiply: {multiply}");
+
+        // Операции сравнения
+        WriteLine($"nullableInt1 > nullableInt2: {nullableInt1 > nullableInt2}"); // False
+        WriteLine($"nullableInt2 < nullableInt1: {nullableInt2 < nullableInt1}"); // False
+        WriteLine($"nullableInt1 == nullableInt2: {nullableInt1 == nullableInt2}"); // False
+        WriteLine($"nullableInt2 != nullableInt1: {nullableInt2 != nullableInt1}"); // True
+
+        // Преобразование типов
+        int normalInt = nullableInt1.GetValueOrDefault(); // 42
+        WriteLine($"Converted Value: {normalInt}");
+
+        // Пример с null-значениями в арифметике
+        nullableInt1 = null;
+        nullableInt2 = 10;
+        int? result = nullableInt1 + nullableInt2; // null
+        WriteLine($"Result of nullableInt1 + nullableInt2: {result ?? 0}");
+    }
+}
+```
+
+Вывод программы:
+
+```
+nullableInt1.HasValue: True
+nullableInt2.HasValue: False
+nullableInt1.Value: 42
+nullableInt2 ?? -1: -1
+Sum: 0
+Multiply: 84
+nullableInt1 > nullableInt2: False      
+nullableInt2 < nullableInt1: False      
+nullableInt1 == nullableInt2: False     
+nullableInt2 != nullableInt1: True      
+Converted Value: 42
+Result of nullableInt1 + nullableInt2: 0
+```
+
+### Объяснения к коду
+
+1. **Присваивание значений**:
+    - `int? nullableInt1 = 42;` — задаём значение.
+    - `int? nullableInt2 = null;` — переменная равна `null`.
+
+2. **Проверка значения**:
+    - `HasValue` показывает, содержит ли переменная значение.
+    - `Value` возвращает значение, если оно есть (иначе будет ошибка).
+
+3. **Арифметика**:
+    - Операция `nullableInt1 + nullableInt2` возвращает `null`, так как один из операндов равен `null`.
+
+4. **Оператор `??`**:
+    - Задаёт значение по умолчанию, если переменная `null`.
+
+5. **Операции сравнения**:
+    - Операции `>` и `<` возвращают `false`, если хотя бы один из операндов равен `null`.
+
+6. **Преобразование типов**:
+    - `GetValueOrDefault()` позволяет безопасно преобразовать `nullable`-тип в обычный.
+ 
+### Основные моменты
+
+1. **Nullable value types поддерживают тот же набор операций, что и их базовый тип**. Результат зависит от наличия значений.
+2. **Операции сравнения (>, <, >=, <=)** возвращают `false`, если хотя бы один операнд равен `null`.
+3. **Оператор `??` и метод `GetValueOrDefault`** помогают обрабатывать `null`-значения.
+4. Если хотя бы один операнд `nullable`, то результат операции тоже будет `nullable`.
