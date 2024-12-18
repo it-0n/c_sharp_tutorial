@@ -393,3 +393,6 @@ solution. Посмотрите содержимое этого файла.
 {style = note}
 
 ![Polyglot Notebooks в VSCode в WSL](PolyglotVSCode12.png){border-effect="line" thumbnail="true" width="700"}
+
+>Для дополнительной практики можете пройти модуль [Установка и настройка Visual Studio Code для разработки C#](https://learn.microsoft.com/ru-ru/training/modules/install-configure-visual-studio-code/).
+>Рекомендую предварительно зарегестрироваться на сайте Microsoft Learn для сохранения результатов обучения.
