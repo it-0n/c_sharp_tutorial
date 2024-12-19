@@ -752,7 +752,7 @@ Console.WriteLine(nullable!.Length); // Уверенность в ненулев
 
 ### Примеры проектов
 
-1. **Проект с включённым режимом:**
+1. **Проект с включённым режимом "nullable reference types":**
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
@@ -782,7 +782,7 @@ public class Program
 }
 ```
 
-2. **Проект с отключённым режимом:**
+2. **Проект с отключённым режимом "nullable reference types":**
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
