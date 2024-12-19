@@ -299,7 +299,7 @@ interface IRecipe
 
 class Cake : IRecipe
 {
-    public void MixIngredients() => Console.WriteLine("Смешиваю муку, яйца и сахар...");
+    public void MixIngredients() => Console.WriteLine("Смешиваю муку, кефир и сахар...");
     public void Bake() => Console.WriteLine("Выпекаю в духовке...");
     public void Decorate() => Console.WriteLine("Украшаю кремом!");
 }
@@ -350,11 +350,11 @@ class Program
 {
     static void Main()
     {
-        Recipe chocolateCake = new("Шоколадный торт", "Мука, яйца, шоколад");
-        Console.WriteLine(chocolateCake); // Recipe { Name = Шоколадный торт, Ingredients = Мука, яйца, шоколад }
+        Recipe chocolateCake = new("Шоколадный торт", "Мука, кефир, шоколад");
+        Console.WriteLine(chocolateCake); // Recipe { Name = Шоколадный торт, Ingredients = Мука, кефир, шоколад }
 
         Recipe vanillaCake = chocolateCake with { Name = "Ванильный торт" };
-        Console.WriteLine(vanillaCake); // Recipe { Name = Ванильный торт, Ingredients = Мука, яйца, шоколад }
+        Console.WriteLine(vanillaCake); // Recipe { Name = Ванильный торт, Ingredients = Мука, кефир, шоколад }
     }
 }
 ```
