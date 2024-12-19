@@ -37,5 +37,6 @@
             <toc-element topic="value-vasr-in-csharp.md"/>
             <toc-element topic="ref-type-vars.md"/>
         </toc-element>
+        <toc-element topic="const-in-csharp.md"/>
     </toc-element>
 </instance-profile>
