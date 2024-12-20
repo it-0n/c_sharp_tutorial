@@ -537,6 +537,8 @@ namespace CakeBakery
 Если переменная ссылочного типа объявлена как поле класса, но не инициализирована явно, она получает 
 значение **`null`**. Это означает, что переменная не указывает на какой-либо объект в памяти.
 
+Попрактикуемся.
+
 Создай консольное приложение `ex0044_ref_default_val` при помощи шаблона `tinyconsole` в папке
 `episode02` и добавь его в файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
 
@@ -753,18 +755,32 @@ Console.WriteLine(nullable!.Length); // Уверенность в ненулев
 ### Примеры проектов
 
 1. **Проект с включённым режимом "nullable reference types":**
+
+Создай консольное приложение `ex0045_null_enable` при помощи шаблона `tinyconsole` в папке
+`episode02` и добавь его в файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи `ex0045_null_enable.csproj` к следующему виду (хотя он таким должен быть после создания проекта, просто проверь):
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="System.Console" Static="true" />
+    </ItemGroup>
+
 </Project>
 ```
 
-Пример кода:
-```c#
-#nullable enable
+Приведи `Program.cs` к следующему виду:
 
+```c#
 public class Program
 {
     public static void Main()
@@ -772,38 +788,104 @@ public class Program
         string nonNullable = "Hello"; // Не может быть null
         string? nullable = null; // Может быть null
 
-        Console.WriteLine(nonNullable.Length); // Безопасно
+        WriteLine($"nonNullable.Length = {nonNullable.Length}"); // Безопасно
 
-        if (nullable != null)
+        WriteLine(nullable.Length); // Не безопасно
+
+        if (nullable != null) // проверка что имеет значение, то есть не null
         {
-            Console.WriteLine(nullable.Length); // Безопасно
+            WriteLine(nullable.Length); // Безопасно
         }
     }
 }
 ```
 
+И запусти программу. Вывод должен быть такой:
+
+```
+nonNullable.Length = 5
+Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.Main() in D:\it0nCS\episode02\ex0045_null_enable\Program.cs:line 10
+```
+
+Ошибку вызвало выражение в 10 строке. Об этом предупреждал компилятор в IDE VSCode. Примерно так же будет выглядеть 
+предупреждение и в других IDE - Visual Studio ли Rider.
+
+![Nullable контекст](nullable01.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Теперь закомментируй десятую строку и снова запусти программу.
+
+![Nullable контекст](nullable02.png){ border-effect="line"  thumbnail="true" width="700" }
+
+Вывод должен быть таким:
+
+```
+nonNullable.Length = 5
+```
+
+Как видите когда режим "nullable reference types" включен, компилятор через IDE предупреждает о возможных ошибках ещё 
+до выполнения программы.
+
 2. **Проект с отключённым режимом "nullable reference types":**
+
+Создай консольное приложение `ex0046_null_disable` при помощи шаблона `tinyconsole` в папке
+`episode02` и добавь его в файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи `ex0046_null_disable.csproj` к следующему виду:
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Nullable>disable</Nullable>
-  </PropertyGroup>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="System.Console" Static="true" />
+    </ItemGroup>
+
 </Project>
 ```
 
-Пример кода:
-```c#
-#nullable disable
+Приведи `Program.cs` к следующему виду:
 
+```c#
 public class Program
 {
     public static void Main()
     {
+        string? nullable = null; // Допустимо, но опасно
         string nonNullable = null; // Допустимо, но опасно
-        Console.WriteLine(nonNullable.Length); // Возможен NullReferenceException
+        
+        WriteLine($"nullable.Length = {nullable.Length}"); // Возможен NullReferenceException
+        WriteLine($"nonNullable.Length = {nonNullable.Length}"); // Возможен NullReferenceException
     }
 }
 ```
+
+Вывод программы:
+
+```
+Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.Main() in D:\it0nCS\episode02\ex0046_null_disable\Program.cs:line 8
+```
+
+Как видите, возникает ошибка (исключение) в 8 строке которая не обрабатывается нами, поэтому программа аварийно завершается.
+
+И IDE нас ни о чём в данном случае предупреждать не будет.
+
+Отключать режим **nullable reference types** можно в случаях, когда это оправдано:
+- для работы с устаревшим кодом или библиотеками;
+- в экспериментальных или одноразовых проектах;
+- чтобы временно снизить шум от предупреждений компилятора.
+
+Тем не менее, по возможности стоит включать этот режим и адаптировать код, чтобы избежать ошибок, связанных с 
+использованием `null`. Это делает код надёжнее и удобнее в поддержке.
+
+Ещё раз напомню что начиная с .NET 6 и C#10 этот режим для проектов включен по умолчанию.
 
 Чтобы стало более наглядно и ясно можете посмотреть следующее видео:
 
