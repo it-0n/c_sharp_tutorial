@@ -709,13 +709,13 @@ class Program
    ```
 
 3. **Строка формата**  
-   Спецификаторы, задающие вид числа, даты, времени или строки.
+   Спецификаторы, задающие вид [числа](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/standard-numeric-format-strings), [даты](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/standard-date-and-time-format-strings), [времени](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/custom-date-and-time-format-strings) или строки.
 
 ### Примеры форматирования
 
 #### Числа
 
-1. **Целые числа**
+1. **[Целые числа](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/standard-numeric-format-strings)**
    - **`D` (Decimal):** минимальное количество цифр.
    - **`X` (Hexadecimal):** шестнадцатеричный формат.
    - **`N` (Number):** разделители разрядов.
@@ -726,7 +726,7 @@ class Program
    Console.WriteLine($"Разделители: {value:N0}"); // 255
    ```
 
-2. **Дробные числа**
+2. **[Дробные числа](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/standard-numeric-format-strings)**
    - **`F` (Fixed-point):** количество знаков после запятой.
    - **`E` (Exponential):** экспоненциальный формат.
    - **`P` (Percent):** процент.
@@ -737,7 +737,7 @@ class Program
    Console.WriteLine($"Процент: {pi:P2}"); // 314.16%
    ```
 
-3. **Бинарные числа**  
+3. **[Бинарные числ](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/standard-numeric-format-strings#BFormatString)а (c .NET 8)**  
    Используем встроенный метод `Convert.ToString`:
    ```C#
    int number = 42;
@@ -746,7 +746,7 @@ class Program
 
 #### Даты и время
 
-1. **Форматы даты и времени**
+1. **[Форматы даты и времени](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/standard-date-and-time-format-strings)**
    - **`d` (Short date):** 28.12.2024
    - **`D` (Long date):** 28 декабря 2024 г.
    - **`T` (Full time):** 18:45:30
@@ -757,7 +757,7 @@ class Program
    Console.WriteLine($"Время: {now:T}");
    ```
 
-2. **Кастомные шаблоны**
+2. **[Кастомные шаблоны](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/custom-date-and-time-format-strings)**
    ```C#
    Console.WriteLine($"{now:dd-MMM-yyyy}"); // 28-Dec-2024
    Console.WriteLine($"{now:HH:mm:ss}");   // 18:45:30
