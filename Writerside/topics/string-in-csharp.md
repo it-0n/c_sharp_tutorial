@@ -1255,7 +1255,9 @@ class VerbatimAndEscapeDemo
 
 ## Совместное использование дословного (verbatim) текста и интерполяции {id="verbatim_1"}
 
-C# позволяет комбинировать **дословный литерал (verbatim)** с **строковой интерполяцией** для упрощения работы со строками, особенно если они содержат обратные слэши (`\`) или другие специальные символы, и при этом требуется вставить значения переменных.
+C# позволяет комбинировать **дословный литерал (verbatim)** со **строковой интерполяцией** для упрощения 
+работы со строками, особенно если они содержат обратные слэши (`\`) или другие специальные символы, 
+и при этом требуется вставить значения переменных.
 
 Для обозначения такой строки используется синтаксис: `$@"строка"`.
 
@@ -1286,7 +1288,7 @@ Console.WriteLine(filePath);
 
 #### Пример 2: Форматированный текст с многострочными строками {id="2_3"}
 ```C#
-string userName = "Дравида";
+string userName = "Max";
 string projectName = "Important-Docs";
 
 // Интерполяция, многострочные строки и verbatim
@@ -1298,9 +1300,9 @@ string message = $@"
 Console.WriteLine(message);
 /*
 Результат:
-Привет, Дравида!
+Привет, Max!
 Ваш проект 'Important-Docs' успешно сохранён.
-Путь к проекту: C:\Users\Дравида\Documents\Important-Docs\
+Путь к проекту: C:\Users\Max\Documents\Important-Docs\
 */
 ```
 
@@ -1312,8 +1314,6 @@ Console.WriteLine(message);
 Приведи Program.cs к следующему виду:
 
 ```C#
-using System;
-
 class VerbatimAndInterpolationDemo
 {
     static void Main()
@@ -1332,7 +1332,7 @@ class VerbatimAndInterpolationDemo
 Путь к файлу: {filePath}
 Пожалуйста, проверьте содержимое файла.";
 
-        Console.WriteLine(message);
+        WriteLine(message);
     }
 }
 ```
@@ -1351,3 +1351,241 @@ class VerbatimAndInterpolationDemo
 Путь к файлу: C:\Users\Alex\Projects\SuperProject\results.csv
 Пожалуйста, проверьте содержимое файла.
 ```
+
+## Необработанные строковые литералы
+
+В языке C# 11 появились **необработанный строковый литеральный текст** (Raw string literal text) 
+и **необработанные строковые литералы** (Raw string literals), которые значительно упрощают работу с 
+многострочными текстами, форматированием, и интерполяцией строк.
+
+### В чем разница между ними?
+1. **Необработанный строковый литеральный текст (Raw string literal text):**
+   Это текст, записанный внутри строкового литерала, который дословно воспроизводится в строке программы. Он может содержать многострочный текст без необходимости экранирования символов (`\`) или использования escape-последовательностей.
+
+2. **Необработанный строковый литерал (Raw string literal):**
+   Это более сложный синтаксис, позволяющий использовать интерполяцию в необработанных строках. Он добавляет поддержку шаблонов, сохранения многострочных блоков кода, а также возможности избегать путаницы с фигурными скобками.
+
+### 1. Необработанный строковый литеральный текст (Raw string literal text)
+
+**Особенности:**
+- Вводится с использованием тройных кавычек (`"""`).
+- Содержимое между кавычками интерпретируется дословно (raw), включая пробелы, табуляции, переносы строк и специальные символы.
+- Удобен для работы с XML, JSON, HTML, SQL запросами или любым другим многострочным текстом.
+
+#### Пример: XML-текст
+```C#
+var xml = """
+<element attr="content">
+    <body>
+    </body>
+</element>
+""";
+Console.WriteLine(xml);
+```
+**Результат:**
+```
+<element attr="content">
+    <body>
+    </body>
+</element>
+```
+
+#### Пример: SQL-запрос
+```C#
+var sqlQuery = """
+SELECT * 
+FROM Products
+WHERE Price > 1000
+ORDER BY Name;
+""";
+Console.WriteLine(sqlQuery);
+```
+**Результат:**
+```
+SELECT * 
+FROM Products
+WHERE Price > 1000
+ORDER BY Name;
+```
+
+### 2. Необработанный строковый литерал (Raw string literal)
+
+**Особенности:**
+- Используется для добавления интерполяции в необработанные строки.
+- Поддерживает:
+   - **Два знака `$`** для включения интерполяции.
+   - **Двойные фигурные скобки `{{` и `}}`** для экранирования `{` и `}` внутри строки.
+   - **Тройные фигурные скобки `{{{` и `}}}`** для представления одиночных фигурных скобок в интерполированной строке.
+
+#### Пример: JSON с интерполяцией
+```C#
+var person = new { FirstName = "John", Age = 30 };
+string json = $$"""
+{
+  "first_name": "{{person.FirstName}}",
+  "age": {{person.Age}},
+  "calculation": "{{{ 1 + 2 }}}"
+}
+""";
+Console.WriteLine(json);
+```
+**Результат:**
+```json
+{
+  "first_name": "John",
+  "age": 30,
+  "calculation": "{3}"
+}
+```
+
+**Объяснение:**
+- `$$` включает интерполяцию.
+- `{{person.FirstName}}` и `{{person.Age}}` вставляют значения из объекта.
+- `{{{ 1 + 2 }}}` добавляет одинарные фигурные скобки `{}` вокруг результата вычисления.
+
+#### Пример: HTML с вложенной интерполяцией
+```C#
+string title = "Welcome!";
+string message = "This is a raw string literal example.";
+var html = $$"""
+<html>
+  <head><title>{{title}}</title></head>
+  <body>
+    <p>{{message}}</p>
+    <p>Calculation: {{{2 * 5}}}</p>
+  </body>
+</html>
+""";
+Console.WriteLine(html);
+```
+**Результат:**
+```html
+<html>
+  <head><title>Welcome!</title></head>
+  <body>
+    <p>This is a raw string literal example.</p>
+    <p>Calculation: {10}</p>
+  </body>
+</html>
+```
+
+#### Пример: Ещё разметка JSON {id="json_1"}
+```C#
+string data = "example";
+var config = $$"""
+{
+  "config": {
+    "name": "{{data}}",
+    "active": true,
+    "values": [1, 2, 3]
+  }
+}
+""";
+Console.WriteLine(config);
+```
+**Результат:**
+```json
+{
+  "config": {
+    "name": "example",
+    "active": true,
+    "values": [1, 2, 3]
+  }
+}
+```
+
+Практика!
+
+Создай консольное приложение `ex0056_raw_string_literal` при помощи шаблона `tinyconsole` в папке
+`episode02` и добавь его в файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи Program.cs к следующему виду:
+
+```C#
+class Program
+{
+    static void Main()
+    {
+        // 1. Необработанный строковый литеральный текст
+        var xml = """
+        <element attr="content">
+            <body>
+            </body>
+        </element>
+        """;
+        WriteLine("Raw String Literal Text (XML):");
+        WriteLine(xml);
+
+        var sqlQuery = """
+        SELECT * 
+        FROM Products
+        WHERE Price > 1000
+        ORDER BY Name;
+        """;
+        WriteLine("\nRaw String Literal Text (SQL):");
+        WriteLine(sqlQuery);
+
+        // 2. Необработанный строковый литерал с интерполяцией
+        var person = new { FirstName = "Alice", Age = 25 };
+        string json = $$"""
+        {
+          "first_name": "{{person.FirstName}}",
+          "age": {{person.Age}},
+          "calculation": "{{{ 5 + 3 }}}"
+        }
+        """;
+        WriteLine("\nRaw String Literal with Interpolation (JSON):");
+        WriteLine(json);
+
+        string title = "Welcome!";
+        string message = "Raw string literals in action.";
+        var html = $$"""
+        <html>
+          <head><title>{{title}}</title></head>
+          <body>
+            <p>{{message}}</p>
+            <p>Result of 10 * 2: {{{10 * 2}}}</p>
+          </body>
+        </html>
+        """;
+        WriteLine("\nRaw String Literal with Interpolation (HTML):");
+        WriteLine(html);
+    }
+}
+```
+
+**Вывод программы:**
+```
+Raw String Literal Text (XML):
+<element attr="content">
+    <body>
+    </body>
+</element>
+
+Raw String Literal Text (SQL):
+SELECT *
+FROM Products
+WHERE Price > 1000
+ORDER BY Name;
+
+Raw String Literal with Interpolation (JSON):
+{
+  "first_name": "Alice",
+  "age": 25,
+  "calculation": "{8}"
+}
+
+Raw String Literal with Interpolation (HTML):
+<html>
+  <head><title>Welcome!</title></head>       
+  <body>
+    <p>Raw string literals in action.</p>    
+    <p>Result of 10 * 2: {20}</p>
+  </body>
+</html>
+```
+
+### Итог
+- **Raw string literal text** используется для работы с многострочным текстом, сохраняя его структуру и формат.
+- **Raw string literal** добавляет интерполяцию, поддерживает сложные шаблоны и использование фигурных скобок.
+- Эти новые возможности делают код более читаемым и удобным для работы с многострочными данными.
