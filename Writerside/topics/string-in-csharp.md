@@ -562,7 +562,7 @@ False
 В этом разделе мы быстро пойдемся по, если можно так выразиться, продвинутым методам сравнения строк.
 А так же освежим парочку методов из предыдущего поста, чтобы понять разницу между тремя очень похожими по названию методами.
 
-1. **`String.CompareOrdinal`**
+1. **[String.CompareOrdinal](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.compareordinal)**
    - Этот метод сравнивает строки **побайтово** (используя коды символов) и **игнорирует настройки культуры**.
    - Используется, если нужен точный и быстрый побайтовый порядок, без учета локальных правил языка.
    - Возвращает:
@@ -576,7 +576,7 @@ False
    Console.WriteLine(result); // -1, так как 'a' меньше 'b' в таблице символов.
    ```
 
-2. **`String.Compare`**
+2. **[String.Compare](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.compare)**
    - Сравнивает строки с учетом или без учета регистра и может учитывать локальные правила языка (культуры).
    - Возвращает те же значения, что и `CompareOrdinal`.
 
@@ -586,7 +586,7 @@ False
    Console.WriteLine(result); // 0, так как регистр игнорируется.
    ```
 
-3. **`String.CompareTo`**
+3. **[String.CompareTo](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.compareto)**
    - Вызывается у конкретной строки и сравнивает её с другой строкой.
    - Это **упрощённый вариант**, который не позволяет настроить параметры (например, игнорировать регистр).
    - Возвращает те же значения, что и `Compare`.
@@ -597,7 +597,7 @@ False
    Console.WriteLine(result); // -1, так как 'apple' меньше 'banana'.
    ```
 
-4. **`String.StartsWith`**
+4. **[String.StartsWith](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.startswith)**
    - Проверяет, **начинается ли строка** с указанного подстроки.
    - Возвращает `true` или `false`.
 
@@ -607,7 +607,7 @@ False
    Console.WriteLine(result); // true, строка начинается с "hello".
    ```
 
-5. **`String.EndsWith`**
+5. **[String.EndsWith](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.endswith)**
    - Проверяет, **заканчивается ли строка** на указанную подстроку.
    - Возвращает `true` или `false`.
 
@@ -617,7 +617,7 @@ False
    Console.WriteLine(result); // true, строка заканчивается на "world".
    ```
 
-6. **`String.Contains`**
+6. **[String.Contains](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.contains)**
    - Проверяет, **содержит ли строка** указанную подстроку.
    - Возвращает `true` или `false`.
 
@@ -627,7 +627,7 @@ False
    Console.WriteLine(result); // true, строка содержит "lo wo".
    ```
 
-7. **`String.IndexOf`**
+7. **[String.IndexOf](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.indexof)**
    - Возвращает индекс первого вхождения указанной подстроки.
    - Если подстрока не найдена, возвращает `-1`.
 
@@ -637,7 +637,7 @@ False
    Console.WriteLine(index); // 6, так как "world" начинается с позиции 6.
    ```
 
-8. **`String.LastIndexOf`**
+8. **[String.LastIndexOf](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.lastindexof)**
    - Возвращает индекс последнего вхождения указанной подстроки.
    - Если подстрока не найдена, возвращает `-1`.
 
