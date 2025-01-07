@@ -2469,8 +2469,8 @@ string PadRight(int totalWidth, char paddingChar);
 
 Практика!
 
-Создай консольное приложение ex0060_string_padding при помощи шаблона tinyconsole в папке episode02 и добавь его в
-файл решения episode02.sln. Это можно сделать как в командной строке, так и в любой IDE.
+Создай консольное приложение `ex0060_string_padding` при помощи шаблона `tinyconsole` в папке `episode02` и добавь его в
+файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
 
 Приведи Program.cs к следующему виду:
 
@@ -2552,4 +2552,112 @@ public class Example
 Методы **PadLeft** и **PadRight** удобны для работы с текстовым форматированием, особенно когда требуется добиться 
 выравнивания или дополнения строки до заданной длины. Эти методы работают интуитивно и предоставляют гибкость за счёт 
 использования как стандартного символа пробела, так и указанных пользователем символов.
+
+## Изменение регистра
+В языке C# для изменения регистра символов в строках используются следующие методы:
+
+### 1. `String.ToUpper()`
+
+Метод [ToUpper()](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.toupper) преобразует все символы строки в верхний регистр.
+
+**Пример использования:**
+
+```c#
+string original = "Hello World!";
+string upper = original.ToUpper();
+Console.WriteLine(upper); // Выведет: HELLO WORLD!
+```
+
+### 2. `String.ToLower()`
+
+Метод [ToLower()](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.tolower) преобразует все символы строки в нижний регистр.
+
+**Пример использования:**
+
+```c#
+string original = "Hello World!";
+string lower = original.ToLower();
+Console.WriteLine(lower); // Выведет: hello world!
+```
+
+### 3. `TextInfo.ToTitleCase()`
+
+Метод [ToTitleCase()](https://learn.microsoft.com/ru-ru/dotnet/api/system.globalization.textinfo.totitlecase) из класса `TextInfo` преобразует первые символы всех слов в строке в заглавные, а остальные символы делает строчными.
+
+**Пример использования:**
+
+```c#
+using System.Globalization;
+
+string original = "hello world!";
+TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+string titleCase = textInfo.ToTitleCase(original);
+Console.WriteLine(titleCase); // Выведет: Hello World!
+```
+
+**Примечание:** Слова, состоящие полностью из заглавных букв, считаются аббревиатурами и не изменяются.
+
+### 4. `Char.ToUpper()` и `Char.ToLower()`
+
+Для изменения регистра отдельных символов используются методы `Char.ToUpper()` и `Char.ToLower()`.
+
+**Пример использования:**
+
+```c#
+char lowerChar = 'a';
+char upperChar = Char.ToUpper(lowerChar);
+Console.WriteLine(upperChar); // Выведет: A
+```
+
+Попрактикуемся!
+
+Создай консольное приложение `ex0062_string_cahange_case` при помощи шаблона `tinyconsole` в папке `episode02` и добавь его в
+файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи Program.cs к следующему виду:
+
+```c#
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main()
+    {
+        string original = "hello world!";
+
+        // Преобразование в верхний регистр
+        string upper = original.ToUpper();
+        WriteLine("Верхний регистр: " + upper);
+
+        // Преобразование в нижний регистр
+        string lower = upper.ToLower();
+        WriteLine("Нижний регистр: " + lower);
+
+        // Преобразование в заглавные буквы каждого слова
+        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+        string titleCase = textInfo.ToTitleCase(original);
+        WriteLine("Заглавные буквы каждого слова: " + titleCase);
+
+        // Преобразование первого символа строки в верхний регистр
+        if (original.Length > 0)
+        {
+            char firstChar = original[0];
+            char upperFirstChar = Char.ToUpper(firstChar);
+            string result = upperFirstChar + original.Substring(1);
+            WriteLine("Первый символ в верхнем регистре: " + result);
+        }
+    }
+}
+```
+
+#### Вывод программы:
+
+```
+Верхний регистр: HELLO WORLD!
+Нижний регистр: hello world!
+Заглавные буквы каждого слова: Hello World!   
+Первый символ в верхнем регистре: Hello world!!
+```
+
 
