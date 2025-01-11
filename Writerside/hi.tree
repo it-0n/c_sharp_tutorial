@@ -38,6 +38,8 @@
             <toc-element topic="ref-type-vars.md"/>
         </toc-element>
         <toc-element topic="const-in-csharp.md"/>
-        <toc-element topic="string-in-csharp.md"/>
+        <toc-element topic="string-in-csharp.md">
+            <toc-element topic="Regex-in-CSharp.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>
