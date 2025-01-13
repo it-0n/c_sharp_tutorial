@@ -2563,7 +2563,7 @@ public class Example
 ## Изменение регистра
 В языке C# для изменения регистра символов в строках используются следующие методы:
 
-### 1. `String.ToUpper()`
+### `String.ToUpper()`
 
 Метод [ToUpper()](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.toupper) преобразует все символы строки в верхний регистр.
 
@@ -2575,7 +2575,7 @@ string upper = original.ToUpper();
 Console.WriteLine(upper); // Выведет: HELLO WORLD!
 ```
 
-### 2. `String.ToLower()`
+### `String.ToLower()`
 
 Метод [ToLower()](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.tolower) преобразует все символы строки в нижний регистр.
 
@@ -2587,7 +2587,78 @@ string lower = original.ToLower();
 Console.WriteLine(lower); // Выведет: hello world!
 ```
 
-### 3. `TextInfo.ToTitleCase()`
+**Примечание:** Слова, состоящие полностью из заглавных букв, считаются аббревиатурами и не изменяются.
+
+### `String.ToLowerInvariant` и `String.ToUpperInvariant`
+
+Методы `ToLowerInvariant` и `ToUpperInvariant` предназначены для преобразования строки в нижний или верхний регистр независимо от текущей культуры операционной системы. Они выполняют преобразования строго по правилам английского языка и обеспечивают предсказуемое поведение.
+
+#### Чем они отличаются от `String.ToLower` и `String.ToUpper`?
+
+- **`String.ToLower` и `String.ToUpper`:**
+   - Эти методы учитывают текущую **культуру системы** (например, региональные настройки Windows).
+   - Результат зависит от языка, установленного в системе. Например, в турецкой культуре преобразование буквы `I` в нижний регистр даст `ı` (особая версия буквы i).
+
+- **`String.ToLowerInvariant` и `String.ToUpperInvariant`:**
+   - Эти методы **игнорируют текущую культуру** и работают по правилам английского языка.
+   - Они полезны для работы с данными, которые должны быть однозначными и одинаковыми независимо от региональных настроек (например, при сравнении строк в коде).
+
+#### Примеры использования
+
+##### Пример 1: Работа с разными культурами {id="1_6"}
+```c#
+using System;
+
+class Example
+{
+    static void Main()
+    {
+        string text = "Istanbul";
+
+        // Преобразование с учетом текущей культуры
+        string lower = text.ToLower(); // Зависит от культуры (в турецкой культуре: "ıstanbul")
+        Console.WriteLine("ToLower: " + lower);
+
+        // Преобразование без учета культуры
+        string lowerInvariant = text.ToLowerInvariant(); // Всегда "istanbul"
+        Console.WriteLine("ToLowerInvariant: " + lowerInvariant);
+    }
+}
+```
+
+##### Пример 2: Устойчивое сравнение строк {id="2_5"}
+При сравнении строк, если вы хотите избежать влияния текущей культуры, используйте `ToLowerInvariant` или `ToUpperInvariant`:
+
+```c#
+using System;
+
+class Example
+{
+    static void Main()
+    {
+        string userInput = "hello";
+        string correctInput = "HELLO";
+
+        // Сравнение без учета регистра
+        bool isEqual = userInput.ToUpperInvariant() == correctInput.ToUpperInvariant();
+        Console.WriteLine("Строки равны: " + isEqual); // true
+    }
+}
+```
+
+### `Char.ToUpper()` и `Char.ToLower()`
+
+Для изменения регистра отдельных символов используются методы `Char.ToUpper()` и `Char.ToLower()`.
+
+**Пример использования:**
+
+```c#
+char lowerChar = 'a';
+char upperChar = Char.ToUpper(lowerChar);
+Console.WriteLine(upperChar); // Выведет: A
+```
+
+### `TextInfo.ToTitleCase()`
 
 Метод [ToTitleCase()](https://learn.microsoft.com/ru-ru/dotnet/api/system.globalization.textinfo.totitlecase) из класса `TextInfo` преобразует первые символы всех слов в строке в заглавные, а остальные символы делает строчными.
 
@@ -2600,20 +2671,6 @@ string original = "hello world!";
 TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
 string titleCase = textInfo.ToTitleCase(original);
 Console.WriteLine(titleCase); // Выведет: Hello World!
-```
-
-**Примечание:** Слова, состоящие полностью из заглавных букв, считаются аббревиатурами и не изменяются.
-
-### 4. `Char.ToUpper()` и `Char.ToLower()`
-
-Для изменения регистра отдельных символов используются методы `Char.ToUpper()` и `Char.ToLower()`.
-
-**Пример использования:**
-
-```c#
-char lowerChar = 'a';
-char upperChar = Char.ToUpper(lowerChar);
-Console.WriteLine(upperChar); // Выведет: A
 ```
 
 Попрактикуемся!
@@ -2632,19 +2689,45 @@ class Program
     static void Main()
     {
         string original = "hello world!";
+        string turkishText = "Istanbul"; // Текст с латинской буквой "I"
 
-        // Преобразование в верхний регистр
+        // Преобразование в верхний регистр с учетом культуры
         string upper = original.ToUpper();
         WriteLine("Верхний регистр: " + upper);
 
-        // Преобразование в нижний регистр
+        // Преобразование в нижний регистр с учетом культуры
         string lower = upper.ToLower();
         WriteLine("Нижний регистр: " + lower);
 
-        // Преобразование в заглавные буквы каждого слова
+        // Преобразование в верхний регистр без учета культуры
+        string upperInvariant = original.ToUpperInvariant();
+        WriteLine("ToUpperInvariant: " + upperInvariant);
+
+        // Преобразование в нижний регистр без учета культуры
+        string lowerInvariant = upper.ToLowerInvariant();
+        WriteLine("ToLowerInvariant: " + lowerInvariant);
+
+        // Преобразование в нижний регистр с текущей культурой (русской)
+        string lowerCurrentCulture = turkishText.ToLower();
+        WriteLine("ToLower (русская культура): " + lowerCurrentCulture);
+
+        // Преобразование в нижний регистр с турецкой культурой
+        CultureInfo turkishCulture = new CultureInfo("tr-TR");
+        string lowerTurkishCulture = turkishText.ToLower(turkishCulture);
+        WriteLine("ToLower (турецкая культура): " + lowerTurkishCulture);
+
+        // Преобразование в нижний регистр без учета культуры (Invariant)
+        lowerInvariant = turkishText.ToLowerInvariant();
+        WriteLine("ToLowerInvariant: " + lowerInvariant);
+
+        // Преобразование в верхний регистр
+        string upperTurkishCulture = turkishText.ToUpper(turkishCulture);
+        WriteLine("ToUpper (турецкая культура): " + upperTurkishCulture);
+
+        // Преобразование каждого слова в заглавные буквы
         TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
         string titleCase = textInfo.ToTitleCase(original);
-        WriteLine("Заглавные буквы каждого слова: " + titleCase);
+        WriteLine("\nЗаглавные буквы каждого слова: " + titleCase);
 
         // Преобразование первого символа строки в верхний регистр
         if (original.Length > 0)
@@ -2658,14 +2741,24 @@ class Program
 }
 ```
 
+**Внимание!** Эту программу надо запускать в терминале поддерживающем Unicode.
+
 #### Вывод программы:
 
 ```
 Верхний регистр: HELLO WORLD!
 Нижний регистр: hello world!
-Заглавные буквы каждого слова: Hello World!   
-Первый символ в верхнем регистре: Hello world!!
+ToUpperInvariant: HELLO WORLD!
+ToLowerInvariant: hello world!
+ToLower (русская культура): istanbul
+ToLower (турецкая культура): ıstanbul
+ToLowerInvariant: istanbul
+ToUpper (турецкая культура): ISTANBUL
+
+Заглавные буквы каждого слова: Hello World!
+Первый символ в верхнем регистре: Hello world!
 ```
+
 ## Разделение строк
 
 Для разделения строк и работы с подстроками есть следующие методы:
