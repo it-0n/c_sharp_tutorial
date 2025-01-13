@@ -3323,3 +3323,144 @@ alarm
    Пример:
    - `"192.168.1.1"` — корректный.
    - `"256.300.1.1"` — некорректный.
+
+## Проверка пустых строк
+
+Работа с текстовыми данными часто связана с проверками: пустая ли строка, содержит ли она только пробелы или что-то 
+другое. В .NET для таких задач существуют два полезных метода: [String.IsNullOrEmpty](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.isnullorempty) и [String.IsNullOrWhiteSpace](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.isnullorwhitespace). 
+Давайте разберем их по порядку.
+
+### Метод `String.IsNullOrEmpty`
+
+#### Что делает?
+Метод `String.IsNullOrEmpty` проверяет, является ли строка **`null`** или пустой (**`""`**). Это удобно для базовой проверки, если строка вообще содержит какие-либо данные.
+
+#### Пример
+```c#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string nullString = null;
+        string emptyString = "";
+        string normalString = "Hello";
+
+        Console.WriteLine(String.IsNullOrEmpty(nullString)); // True
+        Console.WriteLine(String.IsNullOrEmpty(emptyString)); // True
+        Console.WriteLine(String.IsNullOrEmpty(normalString)); // False
+    }
+}
+```
+
+#### Как работает?
+- Возвращает **`true`**, если строка равна `null` или `""`.
+- Возвращает **`false`**, если строка содержит хотя бы один символ.
+
+### Метод `String.IsNullOrWhiteSpace`
+
+#### Что делает?
+Метод `String.IsNullOrWhiteSpace` расширяет функциональность `IsNullOrEmpty`. Он проверяет, является ли строка:
+- **`null`**,
+- пустой (**`""`**) или
+- содержит только пробелы или символы-разделители (например, табуляции, перенос строки и т.д.).
+
+#### Пример
+```c#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string nullString = null;
+        string emptyString = "";
+        string whiteSpaceString = "   ";
+        string normalString = "Hello";
+
+        Console.WriteLine(String.IsNullOrWhiteSpace(nullString)); // True
+        Console.WriteLine(String.IsNullOrWhiteSpace(emptyString)); // True
+        Console.WriteLine(String.IsNullOrWhiteSpace(whiteSpaceString)); // True
+        Console.WriteLine(String.IsNullOrWhiteSpace(normalString)); // False
+    }
+}
+```
+
+#### Как работает?
+- Возвращает **`true`**, если строка равна `null`, пустая или состоит только из пробельных символов.
+- Возвращает **`false`**, если строка содержит хотя бы один непробельный символ.
+
+### Разница между `IsNullOrEmpty` и `IsNullOrWhiteSpace`
+
+#### Основные различия:
+| Метод                   | Проверяет `null` | Проверяет пустую строку (`""`) | Проверяет только пробелы (`"   "`) |
+|--------------------------|------------------|--------------------------------|-------------------------------------|
+| **`IsNullOrEmpty`**      | ✅               | ✅                             | ❌                                  |
+| **`IsNullOrWhiteSpace`** | ✅               | ✅                             | ✅                                  |
+
+#### Когда использовать?
+
+1. **`String.IsNullOrEmpty`**:
+   - Используйте, если нужно проверить только базовые состояния строки (`null` или пустая).
+   - Например, вы проверяете, была ли вообще задана строка.
+
+2. **`String.IsNullOrWhiteSpace`**:
+   - Используйте, если хотите учитывать строки, которые выглядят пустыми, но содержат пробелы, табуляции или другие невидимые символы.
+   - Например, для проверки пользовательского ввода.
+
+И снова время практики, падаван!
+
+Создай консольное приложение `ex0064_isnull_string` при помощи шаблона `tinyconsole` в папке `episode02` и добавь его в
+файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи Program.cs к следующему виду:
+```c#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] testStrings = {
+            null,          // Null строка
+            "",            // Пустая строка
+            "   ",         // Строка из пробелов
+            "\t\n",        // Строка из табуляции и переноса строки
+            "Hello World", // Обычная строка
+        };
+
+        foreach (var str in testStrings)
+        {
+            WriteLine($"Строка: \"{str}\"");
+            WriteLine($"IsNullOrEmpty: {String.IsNullOrEmpty(str)}");
+            WriteLine($"IsNullOrWhiteSpace: {String.IsNullOrWhiteSpace(str)}");
+            WriteLine();
+        }
+    }
+}
+```
+
+#### Вывод программы:
+```
+Строка: ""
+IsNullOrEmpty: True
+IsNullOrWhiteSpace: True
+
+Строка: ""
+IsNullOrEmpty: True
+IsNullOrWhiteSpace: True
+
+Строка: "   "       
+IsNullOrEmpty: False
+IsNullOrWhiteSpace: True 
+
+Строка: "
+"
+IsNullOrEmpty: False     
+IsNullOrWhiteSpace: True 
+
+Строка: "Hello World"    
+IsNullOrEmpty: False     
+IsNullOrWhiteSpace: False
+```
