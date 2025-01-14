@@ -3464,3 +3464,262 @@ IsNullOrWhiteSpace: True
 IsNullOrEmpty: False     
 IsNullOrWhiteSpace: False
 ```
+
+## Нормализация строк
+
+Метод [String.Normalize](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.normalize) в C# используется для 
+приведения строки к определённой нормальной форме. Это нужно для того, чтобы сделать строку проще и понятнее для 
+сравнения или обработки. Особенно это полезно, если в строке используются символы, которые могут выглядеть одинаково, 
+но технически записаны по-разному.
+
+### Почему это важно?
+
+Некоторые символы в разных языках могут записываться разными способами, но при этом выглядеть одинаково. Например, буква "é" может быть записана как один символ или как два символа: "e" и надстрочная отметка (´). Для компьютера это разные строки, даже если они выглядят одинаково. Нормализация помогает привести такие строки к единому виду, чтобы их было легче сравнивать или обрабатывать.
+
+### Формы нормализации
+
+Метод `String.Normalize` поддерживает четыре формы нормализации:
+
+1. **`NormalizationForm.FormC` (по умолчанию)**: Преобразует символы в их составные версии. Например, "e" и надстрочная отметка (´) объединяются в "é".
+2. **`NormalizationForm.FormD`**: Разделяет символы на простые составляющие. Например, "é" становится "e" + надстрочная отметка.
+3. **`NormalizationForm.FormKC`**: Приводит строку к составной форме и применяет упрощения (например, символы, похожие на буквы, превращаются в буквы).
+4. **`NormalizationForm.FormKD`**: Приводит строку к разложенной форме и применяет упрощения.
+
+### Перегрузки метода `String.Normalize`
+
+#### 1. **`Normalize()`**
+
+Эта версия метода приводит строку к форме `NormalizationForm.FormC`. Например:
+
+```c#
+string original = "e\u0301"; // "e" + надстрочная отметка
+string normalized = original.Normalize();
+Console.WriteLine(normalized); // Выводит "é"
+```
+
+#### 2. **`Normalize(NormalizationForm)`**
+
+Позволяет указать, к какой форме нормализации нужно привести строку. Например:
+
+```c#
+string original = "é";
+string normalized = original.Normalize(NormalizationForm.FormD);
+Console.WriteLine(normalized); // Выводит "e" + надстрочная отметка
+```
+
+Попрактикуемся!
+
+Создай консольное приложение `ex0065_string_normalize` при помощи шаблона `tinyconsole` в папке `episode02` и добавь его в
+файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи Program.cs к следующему виду:
+
+```c#
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+        // Оригинальная строка: "e" + надстрочная отметка
+        string original = "e\u0301";
+        WriteLine("Оригинальная строка: " + original);
+        WriteLine("Длина строки: " + original.Length);
+
+        // Нормализация по умолчанию (FormC)
+        string normalizedC = original.Normalize();
+        WriteLine("\nНормализовано (FormC): " + normalizedC);
+        WriteLine("Длина строки (FormC): " + normalizedC.Length);
+
+        // Нормализация в FormD
+        string normalizedD = original.Normalize(NormalizationForm.FormD);
+        WriteLine("\nНормализовано (FormD): " + normalizedD);
+        WriteLine("Длина строки (FormD): " + normalizedD.Length);
+
+        // Нормализация в FormKC
+        string normalizedKC = original.Normalize(NormalizationForm.FormKC);
+        WriteLine("\nНормализовано (FormKC): " + normalizedKC);
+        WriteLine("Длина строки (FormKC): " + normalizedKC.Length);
+
+        // Нормализация в FormKD
+        string normalizedKD = original.Normalize(NormalizationForm.FormKD);
+        WriteLine("\nНормализовано (FormKD): " + normalizedKD);
+        WriteLine("Длина строки (FormKD): " + normalizedKD.Length);
+
+        // Сравнение строк
+        WriteLine("\nСравнение:");
+        WriteLine("original == normalizedC: " + (original == normalizedC));
+        WriteLine("original == normalizedD: " + (original == normalizedD));
+    }
+}
+```
+
+**Внимание!** Для правильного вывода консоль должна поддерживать Unicode.
+
+#### Вывод программы:
+
+```
+Оригинальная строка: é
+Длина строки: 2
+
+Нормализовано (FormC): é
+Длина строки (FormC): 1
+
+Нормализовано (FormD): é
+Длина строки (FormD): 2
+
+Нормализовано (FormKC): é
+Длина строки (FormKC): 1
+
+Нормализовано (FormKD): é
+Длина строки (FormKD): 2
+
+Сравнение:
+original == normalizedC: False
+original == normalizedD: True
+```
+
+### Что делает программа?
+
+1. **Исходная строка**: Берётся строка "e" с надстрочной отметкой.
+2. **Нормализация**: Программа показывает, как изменяется строка в каждой из форм нормализации.
+3. **Сравнение**: Показывает, что строки с разной нормализацией могут выглядеть одинаково, но быть разными для компьютера.
+
+### Итог
+
+Метод `String.Normalize` помогает привести строки к единому виду, чтобы их было легче сравнивать или обрабатывать. Это особенно полезно, если вы работаете с текстами на разных языках или с символами, которые могут быть записаны по-разному.
+
+### Метод `String.IsNormalized` {id="string-isnormalized_1"}
+
+Как мы уже обсуждали выше про метод `String.Normalize`, строки могут содержать символы, записанные разными способами, 
+которые выглядят одинаково. Например:
+
+- Символ **"é"** может быть представлен как один символ (U+00E9) или как два символа: **"e"** (U+0065) и надстрочная 
+- отметка **´** (U+0301).
+
+Метод [String.IsNormalized](https://learn.microsoft.com/ru-ru/dotnet/api/system.string.isnormalized) помогает определить, 
+соответствует ли строка уже определённой **нормальной форме**, или её нужно нормализовать с помощью метода 
+`String.Normalize`.
+
+Или другими словами `String.IsNormalized` проверяет, приведена ли строка к определённой **нормальной форме**. 
+Это своего рода "инспектор", который смотрит на строку и отвечает: "Да, всё нормально!" или "Нет, строку нужно привести 
+в порядок".
+
+### Как работает метод?
+
+Метод проверяет, соответствует ли строка одной из четырёх форм нормализации:
+
+1. **FormC** (по умолчанию): Символы объединены в составные символы.
+2. **FormD**: Символы разделены на простые составляющие.
+3. **FormKC**: Составные символы плюс упрощения.
+4. **FormKD**: Разложенные символы плюс упрощения.
+
+Если строка соответствует указанной форме нормализации, метод возвращает `true`, иначе — `false`.
+
+### Перегрузки метода `String.IsNormalized`
+
+Метод имеет две версии:
+
+#### 1. **`IsNormalized()`**
+
+Эта версия проверяет, приведена ли строка к форме `NormalizationForm.FormC` (по умолчанию).
+
+**Пример:**
+
+```c#
+string text = "e\u0301"; // "e" + надстрочная отметка
+bool isNormalized = text.IsNormalized();
+Console.WriteLine(isNormalized); // Вывод: False
+```
+
+#### 2. **`IsNormalized(NormalizationForm)`**
+
+Эта версия позволяет указать, к какой форме нормализации нужно проверить строку.
+
+**Пример:**
+
+```c#
+string text = "é"; // Составной символ
+bool isNormalizedFormD = text.IsNormalized(NormalizationForm.FormD);
+Console.WriteLine(isNormalizedFormD); // Вывод: False (FormD требует разложения символов)
+```
+
+И ещё попрактикуемся!
+
+Создай консольное приложение `ex0066_string_isnormalize` при помощи шаблона `tinyconsole` в папке `episode02` и добавь его в
+файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
+
+Приведи Program.cs к следующему виду:
+
+```c#
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+        // Исходные строки
+        string original = "e\u0301"; // "e" + надстрочная отметка
+        string normalized = original.Normalize(); // Приведено к FormC
+
+        WriteLine("Исходная строка: " + original);
+        WriteLine("Нормализованная строка (FormC): " + normalized);
+
+        // Проверка нормализации по умолчанию (FormC)
+        WriteLine("\nПроверка нормализации (FormC):");
+        WriteLine("original.IsNormalized(): " + original.IsNormalized());
+        WriteLine("normalized.IsNormalized(): " + normalized.IsNormalized());
+
+        // Проверка нормализации в FormD
+        WriteLine("\nПроверка нормализации (FormD):");
+        WriteLine("original.IsNormalized(FormD): " + original.IsNormalized(NormalizationForm.FormD));
+        WriteLine("normalized.IsNormalized(FormD): " + normalized.IsNormalized(NormalizationForm.FormD));
+
+        // Проверка нормализации в FormKC
+        WriteLine("\nПроверка нормализации (FormKC):");
+        WriteLine("original.IsNormalized(FormKC): " + original.IsNormalized(NormalizationForm.FormKC));
+        WriteLine("normalized.IsNormalized(FormKC): " + normalized.IsNormalized(NormalizationForm.FormKC));
+    }
+}
+```
+
+**Внимание!** Для правильного вывода консоль должна поддерживать Unicode.
+
+#### Вывод программы
+
+```
+Исходная строка: é
+Нормализованная строка (FormC): é
+
+Проверка нормализации (FormC):
+original.IsNormalized(): False
+normalized.IsNormalized(): True
+
+Проверка нормализации (FormD):
+original.IsNormalized(FormD): True
+normalized.IsNormalized(FormD): False
+
+Проверка нормализации (FormKC):
+original.IsNormalized(FormKC): False
+normalized.IsNormalized(FormKC): True
+```
+
+### Что делает программа?
+
+1. **Создаёт строки**:
+   - `original` — строка с "e" и надстрочной отметкой.
+   - `normalized` — строка, приведённая к нормальной форме `FormC`.
+
+2. **Проверяет нормализацию**:
+   - Метод `IsNormalized()` по умолчанию проверяет форму `FormC`.
+   - Метод `IsNormalized(NormalizationForm)` проверяет другие формы.
+
+3. **Выводит результаты проверки**.
+
+## Итоги
+
+- Метод `String.IsNormalized` — это "проверщик", который помогает понять, нужно ли нормализовать строку.
+- Он тесно связан с методом `String.Normalize`, который выполняет саму нормализацию.
+- Использование этих методов полезно при сравнении строк или работе с текстами из разных языков и систем, чтобы избежать скрытых различий между символами.
+
+Эти инструменты упрощают жизнь программистам, делая строки предсказуемыми и удобными для обработки.
