@@ -90,7 +90,7 @@ Console.WriteLine($"Новый текст: {sb}"); // Вывод: При
 
 ## Изменение строки StringBuilder {id="stringbuilder_4"}
 
-### Основные методы изменения строки
+**[Основные методы изменения строки](https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/stringbuilder#modifying-the-stringbuilder-string)**
 
 | Метод                   | Описание                                | Пример                                   |  
 |--------------------------|-----------------------------------------|------------------------------------------|  
