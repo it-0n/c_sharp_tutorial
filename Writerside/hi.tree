@@ -43,5 +43,6 @@
             <toc-element topic="Regex-in-CSharp.md"/>
         </toc-element>
         <toc-element topic="Getting-text-input-from-the-user.md"/>
+        <toc-element topic="Getting-key-input.md"/>
     </toc-element>
 </instance-profile>
