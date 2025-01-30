@@ -46,6 +46,10 @@
         <toc-element topic="Getting-key-input.md"/>
         <toc-element topic="Program-execution-flow-control.md">
             <toc-element topic="Conditional-expressions.md"/>
+            <toc-element topic="conditional-operators.md">
+                <toc-element topic="if-else-operators.md"/>
+                <toc-element topic="switch-operator.md"/>
+            </toc-element>
         </toc-element>
     </toc-element>
 </instance-profile>
