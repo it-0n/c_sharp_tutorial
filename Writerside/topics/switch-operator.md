@@ -416,6 +416,39 @@ switch (myColor)
 }
 ```
 
+```c#
+enum UserRole
+{
+    Admin,
+    Moderator,
+    User
+}
+
+class Program
+{
+    static void Main()
+    {
+        UserRole role = UserRole.Moderator;
+
+        switch (role)
+        {
+            case UserRole.Admin:
+                Console.WriteLine("Полный доступ.");
+                break;
+            case UserRole.Moderator:
+                Console.WriteLine("Редактирование контента.");
+                break;
+            case UserRole.User:
+                Console.WriteLine("Просмотр контента.");
+                break;
+            default:
+                Console.WriteLine("Неизвестная роль.");
+                break;
+        }
+    }
+}
+```
+
 ✅ **Кортежи (C# 8.0+):**
 ```c#
 (int x, int y) point = (0, 1);

@@ -218,6 +218,8 @@ bool result = A & B; // GetResult() ВЫЗОВЕТСЯ, даже если A уж
 Создай консольное приложение `ex0080_conditional_expressions` при помощи шаблона `tinyconsole` в папке `episode02` и добавь 
 его в файл решения `episode02.sln`. Это можно сделать как в командной строке, так и в любой IDE.
 
+И приведи Program.cs к следующему виду:
+
 ```c#
 class Program
 {
